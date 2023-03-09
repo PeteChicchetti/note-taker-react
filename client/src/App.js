@@ -19,6 +19,7 @@ import Dashboard from './pages/Dashboard';
 /// IMPORT COMPONENTS ///
 import ProtectRoute from './components/ProtectRoute';
 
+import './reset.css';
 import './App.css';
 
 const httpLink = createHttpLink({
