@@ -10,6 +10,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Auth from './utils/auth';
 
+import './reset.css';
+import './App.css';
+
 /// IMPORT PAGES ///
 import Landing from './pages/Landing';
 import Signup from './pages/Signup';
@@ -21,9 +24,6 @@ import ProtectRoute from './components/ProtectRoute';
 
 import NavBar from './components/NavBar/NavBar';
 import MobileMenu from './components/MobileMenu/MobileMenu';
-
-import './reset.css';
-import './App.css';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
