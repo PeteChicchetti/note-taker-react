@@ -117,3 +117,9 @@ export const NavBtnLink = styled(LinkR)`
         color: #010606;
     }
 `;
+
+export const Date = styled.div`
+    display: flex;
+    align-items: center;
+    color: white;
+`;

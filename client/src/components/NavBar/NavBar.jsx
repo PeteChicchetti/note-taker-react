@@ -1,4 +1,5 @@
 import React from 'react';
+import Moment from 'react-moment';
 import { FaBars} from 'react-icons/fa';
 import { 
   Nav,
@@ -6,10 +7,11 @@ import {
   NavLogo,
   MobileIcon, 
   NavMenu,
-  NavItem,
-  NavLinks,  
+  // NavItem,
+  // NavLinks,  
   NavBtn, 
-  NavBtnLink 
+  NavBtnLink,
+  Date
 } from './NavBarElements'
 
 const NavBar = ({ toggle }) => {
@@ -17,26 +19,17 @@ const NavBar = ({ toggle }) => {
     <>
         <Nav>
           <NavbarContainer>
-            <NavLogo to="/" id="nav-link">Pete Chicchetti</NavLogo>
+            <NavLogo to="/" id="nav-link">Note Taker</NavLogo>
             <MobileIcon onClick={toggle}>
               <FaBars />
             </MobileIcon>
             <NavMenu>
-              <NavItem>
-                <NavLinks to="/" id="nav-link">About Me</NavLinks>
-              </NavItem>
-              <NavItem>
-                <NavLinks to="/builds" id="nav-link">Contact</NavLinks>
-              </NavItem>
-              <NavItem>
-                <NavLinks to="/discussions" id="nav-link">Portfolio</NavLinks>
-              </NavItem>
-              <NavItem>
-                <NavLinks to="/signup" id="nav-link" style={{ display: 'none' }}>Sign Up</NavLinks>
-              </NavItem>
+                <Date>
+                  <Moment format='MMMM Do YYYY'></Moment>
+                </Date>
             </NavMenu> 
             <NavBtn>
-              <NavBtnLink  id="nav-link">Resume</NavBtnLink>
+              <NavBtnLink  id="nav-link">Sign Out</NavBtnLink>
             </NavBtn>
           </NavbarContainer>  
         </Nav>
