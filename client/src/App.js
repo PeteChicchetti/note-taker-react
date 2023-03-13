@@ -24,6 +24,7 @@ import ProtectRoute from './components/ProtectRoute';
 
 import NavBar from './components/NavBar/NavBar';
 import MobileMenu from './components/MobileMenu/MobileMenu';
+import Notes from './components/Notes/Notes';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -62,6 +63,7 @@ function App() {
           <Route path='/' element={<Landing />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/notes' element={<Notes />} />
           <Route
             path='dashboard/:userId'
             element={Auth.loggedIn() ? <Dashboard /> : <ProtectRoute />}
