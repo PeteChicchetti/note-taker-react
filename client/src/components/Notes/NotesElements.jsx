@@ -7,7 +7,7 @@ export const NotesMain = styled.div`
 export const NotesContainer = styled.div`
     background: #414141;
     margin: 80px auto 0px;
-    padding-top: 40px;
+    padding: 40px 24px;
     height: calc(100vh - 80px);
     max-width: 1100px;
 `
