@@ -13,7 +13,7 @@ const Notes = () => {
     <>
         <NotesMain>
             <NotesContainer >
-                <AddBtn><IoIosAddCircle style={{ height: '50px', width: '50px', color: '#000' }} /></AddBtn>
+                <AddBtn><IoIosAddCircle style={{ height: '50px', width: '50px', color: '#000', margin: '0 0 0 -5px' }} /></AddBtn>
             </NotesContainer>
         </NotesMain>    
     </>  
