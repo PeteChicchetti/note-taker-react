@@ -10,6 +10,10 @@ export const NotesContainer = styled.div`
     padding: 40px 24px;
     height: calc(100vh - 80px);
     max-width: 1100px;
+
+    @media screen and (max-width: 960px) {
+        padding: 24px 24px;
+    }
 `
 
 export const AddBtn = styled.span`
