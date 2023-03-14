@@ -1,0 +1,28 @@
+.addIcon {
+    height: 50px;
+    width: 50px;
+    color: #000;
+    margin: 0 0 0 -5px; 
+}
+
+.cardContainer {
+    padding: 0px 24px 12px 24px;
+}
+
+.noteCard {
+    max-width: 1100px;
+    background-color: #000;
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.cardTitle {
+    padding: 10px 12px 15px 15px;
+    border-bottom: 1px solid white;
+    border-length: 90%;
+}
+
+.cardContent {
+    padding: 15px 12px 10px 15px;
+}
