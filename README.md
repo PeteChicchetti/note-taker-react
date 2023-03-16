@@ -1,2 +1,2 @@
-# task-organizer
-REACT task organizer
+# note-taker
+REACT note-taker
