@@ -41,7 +41,7 @@ const Login = (props) => {
   };
 
   return (
-    <main>
+    <main style={{ background: '#414141', margin: '80px 0px 0px 0px', height: 'calc(100vh - 80px)'}}>
       {data ? (
         <p>Successfully logged in! You may now head{' '}<Link to='/'>back to the hompage.</Link></p>
       ) : (
