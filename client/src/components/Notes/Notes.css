@@ -12,6 +12,8 @@
 }
 
 .noteCard {
+    display: flex;
+    flex-direction: column;
     max-width: 1100px;
     background-color: #000;
     color: white;
@@ -25,6 +27,16 @@
 }
 
 .cardContent {
-    padding: 15px 12px 10px 15px;
+    padding: 15px 12px 15px 15px;
+    border-bottom: 1px solid #15cdfc;
     line-height: 1.2;
+}
+
+.noteDate {
+    text-align: end;
+    padding: 15px 12px 12px 15px;
+}
+
+.date {
+    color: #15cdfc;
 }
