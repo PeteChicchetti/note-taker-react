@@ -1,5 +1,6 @@
 import React from 'react';
 import Moment from 'react-moment';
+import AuthService from '../../utils/auth';
 import { FaBars} from 'react-icons/fa';
 import { 
   Nav,
@@ -29,7 +30,7 @@ const NavBar = ({ toggle }) => {
                 </Date>
             </NavMenu> 
             <NavBtn>
-              <NavBtnLink  id="nav-link">Sign Out</NavBtnLink>
+              {AuthService.loggedIn() ? <NavBtnLink  id="nav-link">Sign Out</NavBtnLink> : <NavBtnLink  id="nav-link" style={{ display: 'none' }}>Sign Out</NavBtnLink> }
             </NavBtn>
           </NavbarContainer>  
         </Nav>
