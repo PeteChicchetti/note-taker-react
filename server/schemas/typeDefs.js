@@ -7,6 +7,14 @@ const typeDefs = gql`
     email: String!
   }
 
+  type Note {
+    _id: ID!
+    title: String!
+    content: String!
+    createdAt: String
+    user: User
+  }
+
   type Auth {
     token: ID!
     user: User
