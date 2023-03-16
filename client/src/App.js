@@ -63,12 +63,13 @@ function App() {
         <NavBar toggle={toggle} />
         <Routes>
           <Route path='/' element={<Landing />} />
+
           <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/notes' element={<Notes />} />
+
           <Route
-            path='dashboard/:userId'
-            element={Auth.loggedIn() ? <Dashboard /> : <ProtectRoute />}
+            path='notes/:userId'
+            element={Auth.loggedIn() ? <Notes /> : <ProtectRoute />}
           />
         </Routes>
       </Router>
