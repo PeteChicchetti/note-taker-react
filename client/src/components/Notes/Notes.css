@@ -108,3 +108,9 @@
 .date {
     color: #15cdfc;
 } */
+
+@media screen and (max-width: 415px) {
+    .noteCardHeader {
+        display: block;
+    }
+}

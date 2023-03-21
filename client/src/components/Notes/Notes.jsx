@@ -22,7 +22,7 @@ const Notes = () => {
                                 <CiStickyNote className='noteIcon'/>
                                 <h2 className='noteTitle'>What is Lorem Ipsum?</h2>
                             </span>
-                            <span>
+                            <span className='btnContainer'>
                                 <button className='editBtn'>EDIT</button>
                                 <button className='deleteBtn'>DELETE</button>
                             </span>
