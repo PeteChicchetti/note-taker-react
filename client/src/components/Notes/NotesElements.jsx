@@ -22,4 +22,8 @@ export const Title = styled.div`
     margin: 6px 6px 12px 6px;
     padding-bottom: 12px;
     border-bottom: 1px solid #15cdfc;
+
+    @media screen and (max-width: 280px) {
+        display: block;
+    }
 `

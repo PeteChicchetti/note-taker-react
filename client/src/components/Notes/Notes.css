@@ -25,6 +25,13 @@
     border: 1px solid black;
 }
 
+@media screen and (max-width: 280px) {
+    .cardTitle {
+        font-size: 18px;
+        padding-bottom: 5px;
+    }
+}
+
 /*--- Individual Card Containers ---*/
 .cardContainer {
     margin: auto;
