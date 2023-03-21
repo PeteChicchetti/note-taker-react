@@ -16,6 +16,8 @@ export const NotesContainer = styled.div`
     }
 `
 
-export const AddBtn = styled.span`
-    color: white;
-`;
+export const Title = styled.div`
+    display: flex;
+    justify-content: space-between;
+    margin: 6px;
+`

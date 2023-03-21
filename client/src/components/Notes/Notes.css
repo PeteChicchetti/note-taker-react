@@ -8,6 +8,7 @@
 .cardMain {
     background-color: #000;
     color: white;
+    padding: 6px;
 }
 
 .cardContainer {
@@ -26,12 +27,12 @@
     margin: 6px;
 }
 
-.cardTitle {
+.noteTitle {
     padding: 10px 12px 15px 15px;
     border-bottom: 1px solid #15cdfc;
 }
 
-.cardContent {
+.noteContent {
     padding: 15px 12px 15px 15px;
     border-bottom: 1px solid #15cdfc;
     line-height: 1.2;
