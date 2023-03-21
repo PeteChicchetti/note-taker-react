@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Card } from 'react-bootstrap';
+import { CiStickyNote } from "react-icons/ci";
 import {
     NotesMain,
     NotesContainer,
@@ -17,7 +18,10 @@ const Notes = () => {
                 <Container className='cardContainer'>
                     <Card className='noteCard'>
                         <div className='noteCardHeader'>
-                            <h2 className='noteTitle'>What is Lorem Ipsum?</h2>
+                            <span className='titleContainer'>
+                                <CiStickyNote className='noteIcon'/>
+                                <h2 className='noteTitle'>What is Lorem Ipsum?</h2>
+                            </span>
                             <span>
                                 <button className='editBtn'>EDIT</button>
                                 <button className='deleteBtn'>DELETE</button>
