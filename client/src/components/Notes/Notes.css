@@ -48,12 +48,19 @@
     border-radius: 10px;
     padding: 10px;
     margin: 6px;
+    cursor: pointer;
 }
 
 .noteCardHeader{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.openHeader {
+    border-bottom: 1px solid #15cdfc;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 .titleContainer {
@@ -101,20 +108,23 @@
     border: 1px solid black;
 }
 
-/* .noteContent {
-    padding: 15px 12px 15px 15px;
+.noteContent {
+    font-family: sans-serif;
+    font-size: 14px;
     border-bottom: 1px solid #15cdfc;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
     line-height: 1.2;
 }
 
 .noteDate {
     text-align: end;
-    padding: 10px 12px 0px 15px;
+    
 }
 
 .date {
     color: #15cdfc;
-} */
+}
 
 @media screen and (max-width: 415px) {
     .noteCardHeader {
