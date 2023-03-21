@@ -21,5 +21,5 @@ export const Title = styled.div`
     justify-content: space-between;
     margin: 6px 6px 12px 6px;
     padding-bottom: 12px;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #15cdfc;
 `
