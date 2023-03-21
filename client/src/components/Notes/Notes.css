@@ -113,13 +113,12 @@
     font-size: 14px;
     border-bottom: 1px solid #15cdfc;
     padding-bottom: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     line-height: 1.2;
 }
 
 .noteDate {
     text-align: end;
-    
 }
 
 .date {
@@ -127,7 +126,24 @@
 }
 
 @media screen and (max-width: 415px) {
+    .noteCard {
+        padding: 0px 10px;
+    }
+
     .noteCardHeader {
         display: block;
+        padding-bottom: 0px;
+    }
+
+    .editBtn, .deleteBtn {
+        margin-bottom: 5px;
+    }
+
+    .noteContent {
+        margin-bottom: 5px;
+    }
+
+    .noteDate {
+        margin-bottom: 5px;
     }
 }
