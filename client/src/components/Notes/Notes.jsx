@@ -13,7 +13,7 @@ const Notes = () => {
     <NotesMain>
         <NotesContainer >
             <Card className='cardMain'>
-                <Title><h1 className=''>Lets add some notes!</h1><button className='addBtn'>Add Note</button></Title>
+                <Title><h1 className='cardTitle'>Lets add some notes!</h1><button className='addBtn'>Add Note</button></Title>
                 <Container className='cardContainer'>
                     <Card className='noteCard'>
                         <h2 className='noteTitle'>What is Lorem Ipsum?</h2>
