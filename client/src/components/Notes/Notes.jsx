@@ -11,6 +11,7 @@ import {
 const Notes = () => {
     const [showNote, setShowNote] = useState(false)
     const open = () => setShowNote(true)
+    const close = () => setShowNote(false)
 
     return (
     <>
@@ -20,7 +21,7 @@ const Notes = () => {
                 <Title><h1 className='cardTitle'>Lets add some notes!</h1><button className='addBtn'>Add Note</button></Title>
                 <Container className='cardContainer'>
                 { showNote ?
-                    <Card className='noteCard' onClick={open}>
+                    <Card className='noteCard' onClick={() => {open(); close()}}>
                         <div className='noteCardHeader openHeader'>
                             <span className='titleContainer'>
                                 <CiStickyNote className='noteIcon'/>
