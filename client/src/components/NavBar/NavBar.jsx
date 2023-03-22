@@ -16,6 +16,9 @@ import {
 } from './NavBarElements'
 
 const NavBar = ({ toggle }) => {
+    const logout = () => AuthService.logout()
+
+
   return (
     <>
         <Nav>
@@ -30,7 +33,7 @@ const NavBar = ({ toggle }) => {
                 </Date>
             </NavMenu> 
             <NavBtn>
-              {AuthService.loggedIn() ? <NavBtnLink  id="nav-link">Sign Out</NavBtnLink> : <NavBtnLink  id="nav-link" style={{ display: 'none' }}>Sign Out</NavBtnLink> }
+              {AuthService.loggedIn() ? <NavBtnLink onClick={logout} id="nav-link signOut">Sign Out</NavBtnLink> : <NavBtnLink onClick={logout} id="nav-link signOut" style={{ display: 'none' }}>Sign Out</NavBtnLink> }
             </NavBtn>
           </NavbarContainer>  
         </Nav>
