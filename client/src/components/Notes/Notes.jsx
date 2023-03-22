@@ -36,7 +36,7 @@ const Notes = () => {
                     <span className="noteDate">Created on: <span className='date'>March 16th</span></span>
                 </Card>
                 : 
-                <Card className='noteCard' onClick={open}>
+                <Card className='noteCard' onClick={() => {open(); close()}}>
                     <div className='noteCardHeader'>
                         <span className='titleContainer'>
                             <CiStickyNote className='noteIcon'/>
