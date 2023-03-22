@@ -21,7 +21,7 @@ const Notes = () => {
             <Title><h1 className='cardTitle'>Lets add some notes!</h1><button className='addBtn'>Add Note</button></Title>
             <Container className='cardContainer'>
             { showNote ?
-                <Card className='noteCard' onClick={() => {open(); close()}}>
+                <Card className='noteCard' onClick={close}>
                     <div className='noteCardHeader openHeader'>
                         <span className='titleContainer'>
                             <CiStickyNote className='noteIcon'/>
@@ -36,7 +36,7 @@ const Notes = () => {
                     <span className="noteDate">Created on: <span className='date'>March 16th</span></span>
                 </Card>
                 : 
-                <Card className='noteCard' onClick={() => {open(); close()}}>
+                <Card className='noteCard' onClick={open}>
                     <div className='noteCardHeader'>
                         <span className='titleContainer'>
                             <CiStickyNote className='noteIcon'/>
