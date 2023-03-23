@@ -13,6 +13,13 @@ const Notes = () => {
     const open = () => setShowNote(true)
     const close = () => setShowNote(false)
 
+
+    // const textarea = document.querySelector('textarea');
+    // textarea.addEventListener('keyup', e => {
+    //     let scHeight = e.target.scrollHeight;
+    //     textarea.style.height = `${scHeight}px`;
+    // });
+
     return (
     <>
     <NotesMain>
