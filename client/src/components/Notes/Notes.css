@@ -140,6 +140,7 @@
 
 .noteBtns {
     margin: 0 3px;
+    cursor: pointer;
 }
 
 .noteBtns:hover {
