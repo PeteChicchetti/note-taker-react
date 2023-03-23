@@ -13,6 +13,10 @@ const Notes = () => {
     const open = () => setShowNote(true)
     const close = () => setShowNote(false)
 
+    const [addNote, setAddNote] = useState(false)
+    const add = () => setAddNote(true)
+    const cancel = () => setAddNote(false)
+
 
     // const textarea = document.querySelector('textarea');
     // textarea.addEventListener('keyup', e => {
@@ -25,20 +29,24 @@ const Notes = () => {
     <NotesMain>
     <NotesContainer >
         <Card className='cardMain'>
-            <Title><h1 className='cardTitle'>Lets add some notes!</h1><button className='addBtn'>Add Note</button></Title>
+            <Title><h1 className='cardTitle'>Lets add some notes!</h1><button className='addBtn' onClick={add}>Add Note</button></Title>
             <Container className='cardContainer'>
+            { addNote ? 
                 <Card className='addCard'>
                     <form className='addNoteForm'>
                         <div className='addNoteHeader'>
                             <input type="text" name='title' placeholder='Title' id='title' className='title'/>
                             <span>
                                 <button className='saveBtn'>SAVE</button>
-                                <button className='cancelBtn'>CANCEL</button>
+                                <button className='cancelBtn' onClick={cancel}>CANCEL</button>
                             </span>
                         </div>
                         <textarea type="text" name='content' placeholder='Content' id='content' className='content' />
                     </form>
                 </Card>
+                :
+                null
+            }    
             { showNote ?
                 <Card className='noteCard'>
                     <div className='noteCardHeader openHeader'>
