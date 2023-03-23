@@ -137,16 +137,6 @@
     line-height: 1.2;
 }
 
-.noteInfo {
-    display: flex;
-    justify-content: space-between;
-}
-
-.noteBtns {
-    margin: 0 3px;
-    cursor: pointer;
-}
-
 .noteBtns:hover {
     color: #15cdfc;
 }
@@ -239,4 +229,15 @@
     background-color: red;
     color: black;
     border: 1px solid black;
+}
+
+.noteInfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.noteBtns {
+    margin: 0 5px 0 3px;
+    cursor: pointer;
+    font-size: 17px;
 }
