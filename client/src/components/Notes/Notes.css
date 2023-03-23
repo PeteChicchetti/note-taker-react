@@ -194,7 +194,7 @@
     border: 1px solid black;
 }
 
-.editBtn, .saveBtn {
+.saveBtn {
     background-color: #000;
     color: green;
     border: 1px solid green;
@@ -202,13 +202,13 @@
     cursor: pointer;
 }
 
-.editBtn:hover, .saveBtn:hover {
+.saveBtn:hover {
     background-color: green;
     color: black;
     border: 1px solid black;
 }
 
-.deleteBtn, .cancelBtn {
+.cancelBtn {
     background-color: #000;
     color: red;
     border: 1px solid red;
@@ -217,7 +217,7 @@
     cursor: pointer;
 }
 
-.deleteBtn:hover, .cancelBtn:hover {
+.cancelBtn:hover {
     background-color: red;
     color: black;
     border: 1px solid black;
