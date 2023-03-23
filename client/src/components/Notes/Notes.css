@@ -133,6 +133,19 @@
     line-height: 1.2;
 }
 
+.noteInfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.noteBtns {
+    margin: 0 3px;
+}
+
+.noteBtns:hover {
+    color: #15cdfc;
+}
+
 .noteDate {
     text-align: end;
 }
