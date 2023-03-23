@@ -21,9 +21,9 @@ const Notes = () => {
             <Title><h1 className='cardTitle'>Lets add some notes!</h1><button className='addBtn'>Add Note</button></Title>
             <Container className='cardContainer'>
             { showNote ?
-                <Card className='noteCard' onClick={close}>
+                <Card className='noteCard'>
                     <div className='noteCardHeader openHeader'>
-                        <span className='titleContainer'>
+                        <span className='titleContainer' onClick={close}>
                             <CiStickyNote className='noteIcon'/>
                             <h2 className='noteTitle'>What is Lorem Ipsum?</h2>
                         </span>
@@ -36,9 +36,9 @@ const Notes = () => {
                     <span className="noteDate">Created on: <span className='date'>March 16th</span></span>
                 </Card>
                 : 
-                <Card className='noteCard' onClick={open}>
+                <Card className='noteCard'>
                     <div className='noteCardHeader'>
-                        <span className='titleContainer'>
+                        <span className='titleContainer' onClick={open}>
                             <CiStickyNote className='noteIcon'/>
                             <h2 className='noteTitle'>What is Lorem Ipsum?</h2>
                         </span>
