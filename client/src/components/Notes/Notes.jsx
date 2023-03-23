@@ -36,12 +36,16 @@ const Notes = () => {
                     <form className='addNoteForm'>
                         <div className='addNoteHeader'>
                             <input type="text" name='title' placeholder='Title' id='title' className='title'/>
-                            <span>
+                            <span className='addNoteBtns'>
                                 <button className='saveBtn'>SAVE</button>
                                 <button className='cancelBtn' onClick={cancel}>CANCEL</button>
                             </span>
                         </div>
                         <textarea type="text" name='content' placeholder='Content' id='content' className='content' />
+                        <span className='addNoteBtnsMobile'>
+                                <button className='saveBtn'>SAVE</button>
+                                <button className='cancelBtn' onClick={cancel}>CANCEL</button>
+                            </span>
                     </form>
                 </Card>
                 :
