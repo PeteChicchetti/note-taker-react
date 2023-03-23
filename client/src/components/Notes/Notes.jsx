@@ -20,6 +20,12 @@ const Notes = () => {
         <Card className='cardMain'>
             <Title><h1 className='cardTitle'>Lets add some notes!</h1><button className='addBtn'>Add Note</button></Title>
             <Container className='cardContainer'>
+                <Card className='addCard'>
+                    <form className='addNoteForm'>
+                        <input type="text" placeholder='Title' id='title' className='title'/>
+                        <textarea type="text" placeholder='Content' id='content' className='content' cols='20' rows='5'/>
+                    </form>
+                </Card>
             { showNote ?
                 <Card className='noteCard'>
                     <div className='noteCardHeader openHeader'>
