@@ -47,7 +47,8 @@ const Notes = () => {
                             <button className='deleteBtn'>DELETE</button>
                         </span>
                     </div>
-                </Card> }
+                </Card> 
+            }
             </Container>
         </Card>
     </NotesContainer>
