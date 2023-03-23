@@ -31,7 +31,7 @@ const Notes = () => {
     <NotesMain>
     <NotesContainer >
         <Card className='cardMain'>
-            <Title><h1 className='cardTitle'>Lets add some notes!</h1><button className='addBtn' onClick={add}>Add Note</button></Title>
+            <Title><h1 className='cardTitle'>Lets add some notes!</h1><button className='addBtn' onClick={ () => {add(); close();}}>Add Note</button></Title>
             <Container className='cardContainer'>
             { addNote ? 
                 <Card className='addCard'>
@@ -70,7 +70,7 @@ const Notes = () => {
                 : 
                 <Card className='noteCard'>
                     <div className='noteCardHeader'>
-                        <span className='titleContainer' onClick={open}>
+                        <span className='titleContainer' onClick={ () => {open(); cancel()}}>
                             <CiStickyNote className='noteIcon'/>
                             <h2 className='noteTitle'>What is Lorem Ipsum?</h2>
                         </span>
