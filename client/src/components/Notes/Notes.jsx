@@ -29,7 +29,13 @@ const Notes = () => {
             <Container className='cardContainer'>
                 <Card className='addCard'>
                     <form className='addNoteForm'>
-                        <input type="text" name='title' placeholder='Title' id='title' className='title'/>
+                        <div className='addNoteHeader'>
+                            <input type="text" name='title' placeholder='Title' id='title' className='title'/>
+                            <span>
+                                <button className='saveBtn'>SAVE</button>
+                                <button className='cancelBtn'>CANCEL</button>
+                            </span>
+                        </div>
                         <textarea type="text" name='content' placeholder='Content' id='content' className='content' />
                     </form>
                 </Card>
@@ -40,7 +46,7 @@ const Notes = () => {
                             <CiStickyNote className='noteIcon'/>
                             <h2 className='noteTitle'>What is Lorem Ipsum?</h2>
                         </span>
-                        <span className='btnContainer'>
+                        <span>
                             <button className='editBtn'>EDIT</button>
                             <button className='deleteBtn'>DELETE</button>
                         </span>
