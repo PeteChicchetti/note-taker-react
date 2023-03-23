@@ -54,7 +54,7 @@ const Notes = () => {
                 null
             }    
             { showNote ?
-                <Card className='noteCard'>
+                <Card className='noteCardOpen'>
                     <div className='noteCardHeader openHeader'>
                         <span className='titleContainer' onClick={close}>
                             <CiStickyNote className='noteIcon'/>

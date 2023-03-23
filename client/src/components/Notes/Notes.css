@@ -79,7 +79,7 @@
     max-width: 1100px;
 }
 
-.noteCard {
+.noteCard, .noteCardOpen {
     display: flex;
     flex-direction: column;
     max-width: 1100px;
@@ -92,6 +92,10 @@
 }
 
 .noteCard:hover {
+    border: 1px solid #15cdfc;
+}
+
+.noteCardOpen {
     border: 1px solid #15cdfc;
 }
 
