@@ -22,8 +22,8 @@ const Notes = () => {
             <Container className='cardContainer'>
                 <Card className='addCard'>
                     <form className='addNoteForm'>
-                        <input type="text" placeholder='Title' id='title' className='title'/>
-                        <textarea type="text" placeholder='Content' id='content' className='content' cols='20' rows='5'/>
+                        <input type="text" name='title' placeholder='Title' id='title' className='title'/>
+                        <textarea type="text" name='content' placeholder='Content' id='content' className='content' />
                     </form>
                 </Card>
             { showNote ?
