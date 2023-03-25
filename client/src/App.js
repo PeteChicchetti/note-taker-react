@@ -62,8 +62,7 @@ function App() {
         <MobileMenu isOpen={isOpen} toggle={toggle}/>
         <NavBar toggle={toggle} />
         <Routes>
-          <Route path='/' element={<Landing />} />
-
+          <Route path='/' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
 

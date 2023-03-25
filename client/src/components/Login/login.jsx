@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 
-const login = () => {
+const Login = () => {
 
     return (
     <>
@@ -15,4 +15,4 @@ const login = () => {
     )
 };
 
-export default login;
+export default Login;
