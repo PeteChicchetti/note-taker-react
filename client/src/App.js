@@ -28,6 +28,7 @@ import './reset.css';
 import './App.css';
 
 import './components/Notes/Notes.css';
+import './components/Login/Login.css';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
