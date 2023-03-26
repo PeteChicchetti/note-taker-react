@@ -13,7 +13,10 @@ const Login = () => {
     <LoginContainer>
         <Card className='loginCard'>
             <form className='loginInfo'>
-                <input className='loginEmail'></input>
+                <h2 className='loginTitle'>Login</h2>
+                <div>
+                    <input className='loginEmail'></input>
+                </div>
                 <input className='loginPassword'></input>
             </form>
         </Card>

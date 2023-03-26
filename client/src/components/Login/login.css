@@ -2,6 +2,21 @@
     border-radius: 5px;
     background-color: black;
     max-width: 600px;
+    min-width: 280px;
     height: 400px;
-    margin: auto;
+    padding: 20px;
+}
+
+.loginInfo {
+
+}
+
+.loginTitle {
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+}
+
+.loginEmail, .loginPassword {
+    width: 100%;
 }
