@@ -13,7 +13,7 @@ import Auth from './utils/auth';
 /// IMPORT PAGES ///
 import Landing from './pages/Landing';
 import Signup from './pages/Signup';
-import Login from './pages/Login';
+// import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 
 /// IMPORT COMPONENTS ///
@@ -21,6 +21,7 @@ import ProtectRoute from './components/ProtectRoute';
 
 import NavBar from './components/NavBar/NavBar';
 import MobileMenu from './components/MobileMenu/MobileMenu';
+import Login from './components/Login/Login';
 import Notes from './components/Notes/Notes';
 
 import './reset.css';

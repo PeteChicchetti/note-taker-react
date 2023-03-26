@@ -5,7 +5,7 @@ const Login = () => {
 
     return (
     <>
-        <Card>
+        <Card className='loginCard'>
             <form>
                 <input></input>
                 <input></input>
