@@ -7,7 +7,7 @@ export const LoginMain = styled.div`
 
 export const LoginContainer = styled.div`
     background: #414141;
-    margin: 80px auto 0px;
+    margin: 80px auto;
     padding: 24px 24px;
     max-width: 800px;
 

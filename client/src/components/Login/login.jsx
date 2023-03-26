@@ -12,9 +12,9 @@ const Login = () => {
     <LoginMain>
     <LoginContainer>
         <Card className='loginCard'>
-            <form>
-                <input></input>
-                <input></input>
+            <form className='loginInfo'>
+                <input className='loginEmail'></input>
+                <input className='loginPassword'></input>
             </form>
         </Card>
     </LoginContainer>
