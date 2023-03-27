@@ -15,9 +15,9 @@ const Login = () => {
             <form className='loginInfo'>
                 <h2 className='loginTitle'>Login</h2>
                 <div>
-                    <input className='loginEmail'></input>
+                    <input className='loginEmail' placeholder='Email'></input>
                 </div>
-                <input className='loginPassword'></input>
+                <input className='loginPassword' placeholder='Password'></input>
             </form>
         </Card>
     </LoginContainer>

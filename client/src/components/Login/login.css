@@ -1,7 +1,7 @@
 .loginCard {
     border-radius: 5px;
     background-color: black;
-    width: 280px;
+    max-width: 280;
     height: 280px;
     padding: 20px;
 }
