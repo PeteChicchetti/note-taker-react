@@ -15,4 +15,8 @@ export const LoginContainer = styled.div`
     @media screen and (max-width: 960px) {
         padding: 24px 24px;
     }
+
+    @media screen and (max-width: 340px) {
+        padding: 10px;
+}
 `

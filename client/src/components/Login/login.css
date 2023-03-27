@@ -91,6 +91,7 @@
 
 @media screen and (max-width: 340px) {
     .loginCard {
-        width: 180px;
+        width: 220px;
+        padding: 20px 15px;
     }
 }
