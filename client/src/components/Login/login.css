@@ -71,12 +71,6 @@
     text-decoration: underline;
 }
 
-/* @media screen and (max-width: 540px) {
-    .loginCard {
-        width: 360px;
-    }
-} */
-
 @media screen and (max-width: 450px) {
     .loginCard {
         width: 300px;
