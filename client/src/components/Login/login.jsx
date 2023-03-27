@@ -25,6 +25,7 @@ const Login = () => {
                 <div className='loginBtnContainer'>
                     <button className='loginBtn'>Log In</button>
                 </div>
+                <p className='switch'>Switch to signup form</p>
             </form>
         </Card>
     </LoginContainer>
