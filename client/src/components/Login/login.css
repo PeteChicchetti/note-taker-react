@@ -71,25 +71,25 @@
     text-decoration: underline;
 }
 
-@media screen and (max-width: 540px) {
+/* @media screen and (max-width: 540px) {
     .loginCard {
         width: 360px;
     }
-}
+} */
 
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 450px) {
     .loginCard {
         width: 300px;
     }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 390px) {
     .loginCard {
         width: 260px;
     }
 }
 
-@media screen and (max-width: 340px) {
+@media screen and (max-width: 350px) {
     .loginCard {
         width: 220px;
         padding: 20px 15px;
