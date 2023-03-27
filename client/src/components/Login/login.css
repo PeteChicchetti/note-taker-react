@@ -1,8 +1,8 @@
 .loginCard {
     border-radius: 5px;
     background-color: black;
-    max-width: 280;
-    height: 280px;
+    width: 350px;
+    height: 350px;
     padding: 20px;
 }
 
@@ -41,7 +41,7 @@
 
 @media screen and (max-width: 380px) {
     .loginCard {
-        width: 280px;
+        width: 260px;
     }
 }
 
