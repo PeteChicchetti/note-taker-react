@@ -19,12 +19,40 @@
 
 .loginEmail, .loginPassword {
     display: flex;
+    flex-direction: column;
+    color: white;
     width: 90%;
     margin: 20px auto;
+    font-family: sans-serif;
+}
+
+.emailBox, .passwordBox {
     padding: 6px;
     border-radius: 5px;
     border: none;
     outline: none;
+}
+
+.loginBtnContainer {
+    text-align: center;
+}
+
+.loginBtn {
+    border-radius: 50px;
+    background: #15cdfc;
+    white-space: nowrap;
+    padding: 10px 22px;
+    color: #010606;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.loginBtn:hover {
+    transition: all 0.2s ease-in-out;
+    background: #fff;
+    color: #010606;
 }
 
 @media screen and (max-width: 540px) {

@@ -14,10 +14,17 @@ const Login = () => {
         <Card className='loginCard'>
             <form className='loginInfo'>
                 <h2 className='loginTitle'>Login</h2>
-                <div>
-                    <input className='loginEmail' placeholder='Email'></input>
+                <div className='loginEmail'>
+                    <h3>Email:</h3>
+                    <input className='emailBox' placeholder='Email'></input>
                 </div>
-                <input className='loginPassword' placeholder='Password'></input>
+                <div className='loginPassword'>
+                    <h3>Password:</h3>
+                    <input className='passwordBox'  placeholder='Password'></input>
+                </div>
+                <div className='loginBtnContainer'>
+                    <button className='loginBtn'>Log In</button>
+                </div>
             </form>
         </Card>
     </LoginContainer>
