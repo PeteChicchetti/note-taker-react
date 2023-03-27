@@ -26,3 +26,27 @@
     border: none;
     outline: none;
 }
+
+@media screen and (max-width: 540px) {
+    .loginCard {
+        width: 360px;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .loginCard {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .loginCard {
+        width: 280px;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .loginCard {
+        width: 180px;
+    }
+}
