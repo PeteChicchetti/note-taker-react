@@ -8,10 +8,6 @@
     padding: 20px;
 }
 
-.loginInfo {
-    margin: 40px 0;
-}
-
 .loginTitle {
     text-align: center;
     color: white;
@@ -69,6 +65,17 @@
 
 .switch:hover {
     text-decoration: underline;
+}
+
+/*----- Data for login (success or error) -----*/
+.loginSuccess {
+    color: white;
+}
+
+.loginError {
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 @media screen and (max-width: 450px) {

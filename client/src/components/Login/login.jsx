@@ -50,7 +50,10 @@ const Login = () => {
     <LoginMain>
     <LoginContainer>
         <Card className='loginCard'>
-            <form className='loginInfo' onSubmit={handleFormSubmit}>
+        {data ? (
+            <p className=''>Successfully logged in!</p>
+        ) : (
+            <form onSubmit={handleFormSubmit}>
                 <h2 className='loginTitle'>Login</h2>
                 <div className='loginEmail'>
                     <h3>Email:</h3>
@@ -74,11 +77,15 @@ const Login = () => {
                         onChange={handleChange}
                     />
                 </div>
+        {error && (
+            <div className='loginError'>{error.message}</div>
+        )}
                 <div className='loginBtnContainer'>
                     <button className='loginBtn' type='submit'>Log In</button>
                 </div>
                 <p className='switch'>Switch to signup form</p>
             </form>
+        )}
         </Card>
     </LoginContainer>
     </LoginMain>
