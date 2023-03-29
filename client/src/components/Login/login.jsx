@@ -50,18 +50,32 @@ const Login = () => {
     <LoginMain>
     <LoginContainer>
         <Card className='loginCard'>
-            <form className='loginInfo'>
+            <form className='loginInfo' onSubmit={handleFormSubmit}>
                 <h2 className='loginTitle'>Login</h2>
                 <div className='loginEmail'>
                     <h3>Email:</h3>
-                    <input className='emailBox' placeholder='Email'></input>
+                    <input 
+                        className='emailBox' 
+                        placeholder='Email'
+                        name='email'
+                        type='email'
+                        value={formState.email}
+                        onChange={handleChange}
+                    />
                 </div>
                 <div className='loginPassword'>
                     <h3>Password:</h3>
-                    <input className='passwordBox'  placeholder='Password'></input>
+                    <input 
+                        className='passwordBox'
+                        placeholder='Password'
+                        name='password'
+                        type='password'
+                        value={formState.password}
+                        onChange={handleChange}
+                    />
                 </div>
                 <div className='loginBtnContainer'>
-                    <button className='loginBtn'>Log In</button>
+                    <button className='loginBtn' type='submit'>Log In</button>
                 </div>
                 <p className='switch'>Switch to signup form</p>
             </form>
