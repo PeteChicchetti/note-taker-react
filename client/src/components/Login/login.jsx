@@ -15,6 +15,16 @@ const Login = () => {
     const [formState, setFormState] = useState({ email: '', password: '' });
     const [login, { error, data }] = useMutation(LOGIN_USER);
 
+    /// HANDLE CHANGE ///
+    const handleChange = (e) => {
+    const { name, value } = e.target;
+
+        setFormState({
+        ...formState,
+        [name]: value,
+        });
+    };
+
     return (
     <>
     <LoginMain>
