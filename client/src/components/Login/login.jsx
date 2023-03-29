@@ -25,6 +25,26 @@ const Login = () => {
         });
     };
 
+    /// FORM SUBMISSION ///
+    const handleFormSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+        const { data } = await login({
+            variables: { ...formState },
+        });
+
+        Auth.login(data.login.token, data.login.user._id);
+        } catch (error) {
+        console.log(error);
+        }
+
+        setFormState({
+        email: '',
+        password: '',
+        });
+    };
+
     return (
     <>
     <LoginMain>
