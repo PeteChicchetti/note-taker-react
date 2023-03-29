@@ -51,7 +51,7 @@ const Login = () => {
     <LoginContainer>
         <Card className='loginCard'>
         {data ? (
-            <p className=''>Successfully logged in!</p>
+            <p className='loginSuccess'>Successfully logged in!</p>
         ) : (
             <form onSubmit={handleFormSubmit}>
                 <h2 className='loginTitle'>Login</h2>
