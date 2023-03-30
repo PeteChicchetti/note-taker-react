@@ -23,18 +23,33 @@ const NavBar = ({ toggle }) => {
     <>
         <Nav>
           <NavbarContainer>
-            <NavLogo to="/" id="nav-link">Note Taker</NavLogo>
+            <NavLogo>Note Taker</NavLogo>
             <MobileIcon onClick={toggle}>
               <FaBars />
             </MobileIcon>
-            <NavMenu>
+          {AuthService.loggedIn() ?
+            <>
+              <NavMenu>
                 <Date>
                   <Moment format='MMMM Do YYYY'></Moment>
                 </Date>
-            </NavMenu> 
-            <NavBtn>
-              {AuthService.loggedIn() ? <NavBtnLink onClick={logout} id="nav-link signOut">Sign Out</NavBtnLink> : <NavBtnLink onClick={logout} id="nav-link signOut" style={{ display: 'none' }}>Sign Out</NavBtnLink> }
-            </NavBtn>
+              </NavMenu> 
+              <NavBtn>
+                <NavBtnLink onClick={logout} id="nav-link signOut">Sign Out</NavBtnLink> 
+              </NavBtn>
+            </>   
+          :
+            <>
+              <NavMenu>
+                <Date>
+                  <Moment format='MMMM Do YYYY' style={{ display: 'none' }}></Moment>
+                </Date>
+              </NavMenu> 
+              <NavBtn>
+                <NavBtnLink onClick={logout} id="nav-link signOut" style={{ display: 'none' }}>Sign Out</NavBtnLink> 
+              </NavBtn>
+            </>  
+          }    
           </NavbarContainer>  
         </Nav>
     </>
