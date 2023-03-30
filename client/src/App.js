@@ -11,22 +11,24 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Auth from './utils/auth';
 
 /// IMPORT PAGES ///
-import Landing from './pages/Landing';
-import Signup from './pages/Signup';
+// import Landing from './pages/Landing';
+// import Signup from './pages/Signup';
 // import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
+// import Dashboard from './pages/Dashboard';
 
 /// IMPORT COMPONENTS ///
 import ProtectRoute from './components/ProtectRoute';
 
 import NavBar from './components/NavBar/NavBar';
 import MobileMenu from './components/MobileMenu/MobileMenu';
+import Signup from './components/Signup/Signup';
 import Login from './components/Login/Login';
 import Notes from './components/Notes/Notes';
 
 import './reset.css';
 import './App.css';
 
+import './components/Signup/Signup.css';
 import './components/Notes/Notes.css';
 import './components/Login/Login.css';
 
