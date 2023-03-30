@@ -2,10 +2,12 @@ import React from 'react';
 import Moment from 'react-moment';
 import AuthService from '../../utils/auth';
 import { FaBars} from 'react-icons/fa';
+import LogoSrc from '../../assets/logo.png';
 import { 
   Nav,
   NavbarContainer,
   NavLogo,
+  Logo,
   MobileIcon, 
   NavMenu,
   // NavItem,
@@ -23,7 +25,7 @@ const NavBar = ({ toggle }) => {
     <>
         <Nav>
           <NavbarContainer>
-            <NavLogo>Note Taker</NavLogo>
+            <NavLogo><Logo src={LogoSrc} />Note Taker</NavLogo>
             <MobileIcon onClick={toggle}>
               <FaBars />
             </MobileIcon>
