@@ -48,7 +48,7 @@ const Signup = () => {
     <SignupMain>
     <SignupContainer>
         <Card className='signupCard'>
-            <form>
+            <form onSubmit={handleFormSubmit}>
                 <h2 className='signupTitle'>SignUp</h2>
                 <div className='signupUsername'>
                     <h3>Username:</h3>  
@@ -57,6 +57,8 @@ const Signup = () => {
                         placeholder='Username'
                         name='username'
                         type='text'
+                        value={formState.username}
+                        onChange={handleChange}
                     />
                 </div>
                 <div className='signupEmail'>
@@ -66,6 +68,8 @@ const Signup = () => {
                         placeholder='Email'
                         name='email'
                         type='email'
+                        value={formState.email}
+                        onChange={handleChange}
                     />
                 </div>
                 <div className='signupPassword'>
@@ -75,6 +79,8 @@ const Signup = () => {
                         placeholder='Password'
                         name='password'
                         type='password'
+                        value={formState.password}
+                        onChange={handleChange}
                     />
                 </div>
                 <div className='signupBtnContainer'>
