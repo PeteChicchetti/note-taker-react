@@ -12,7 +12,10 @@ import Auth from '../../utils/auth';
 
 
 const Login = () => {
-    const [formState, setFormState] = useState({ email: '', password: '' });
+    const [formState, setFormState] = useState({ 
+        email: '', 
+        password: '' 
+    });
     const [login, { error, data }] = useMutation(LOGIN_USER);
 
     /// HANDLE CHANGE ///
