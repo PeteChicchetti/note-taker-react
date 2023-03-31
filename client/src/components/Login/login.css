@@ -55,15 +55,18 @@
 }
 
 .switch {
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.signupLink {
     color: white;
     font-family: sans-serif;
     font-size: 12px;
-    text-align: center;
-    margin: 20px 0px;
-    cursor: pointer;
+    text-decoration: none;
 }
 
-.switch:hover {
+.signupLink:hover {
     text-decoration: underline;
 }
 

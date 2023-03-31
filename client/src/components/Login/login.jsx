@@ -83,7 +83,9 @@ const Login = () => {
                 <div className='loginBtnContainer'>
                     <button className='loginBtn' type='submit'>Log In</button>
                 </div>
-                <p className='switch'>Switch to signup form</p>
+                <div className='switch'>
+                    <a href='/Signup' className='signupLink'>Switch to signup form</a>
+                </div>
             </form>
         )}
         </Card>
