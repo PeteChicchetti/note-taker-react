@@ -290,6 +290,7 @@
 .noteInfo {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-top: 10px;
     padding: 10px 7px;
     background-color: rgb(9, 9, 9);
