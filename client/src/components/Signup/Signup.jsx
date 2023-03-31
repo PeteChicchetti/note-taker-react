@@ -40,6 +40,12 @@ const Signup = () => {
                         type='password'
                     />
                 </div>
+                <div className='signupBtnContainer'>
+                    <button className='signupBtn' type='submit'>SignUp</button>
+                </div>
+                <div className='switch'>
+                    <a href='/login' className='loginLink'>Switch to login form</a>
+                </div>
             </form>        
         </Card>
     </SignupContainer>
