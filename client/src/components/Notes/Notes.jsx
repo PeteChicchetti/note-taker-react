@@ -79,9 +79,10 @@ const Notes = () => {
                 <Card className='noteCard'>
                     <div className='noteCardHeader'>
                         <span className='titleContainer' onClick={ () => {open(); cancel()}}>
-                            <CiStickyNote className='noteIcon'/>
-                            <h2 className='noteTitle'>What is Lorem Ipsum?</h2>
+                                <CiStickyNote className='noteIcon'/>
+                                <h2 className='noteTitle'>What is Lorem Ipsum?</h2>
                         </span>
+                        <span className="noteDate">Created on: <span className='date'>March 16th</span></span>
                     </div>
                 </Card> 
             }
