@@ -80,9 +80,14 @@ const Notes = () => {
                 : 
                 <Card className='noteCard'>
                     <div className='noteCardHeader'>
-                        <span className='titleContainer' onClick={ () => {open(); cancel()}}>
-                                <CiStickyNote className='noteIcon'/>
-                                <h2 className='noteTitle'>What is Lorem Ipsum?</h2>
+                        <span className='closedTitleContainer' onClick={ () => {open(); cancel()}}>
+                                <span className='closedTitle'>
+                                    <CiStickyNote className='noteIcon'/>
+                                    <h2 className='noteTitle'>What is Lorem Ipsum?</h2>
+                                </span>
+                                <div className='mobileDateContainer'>
+                                    <span className="mobileNoteDate">Created on: <span className='date'>March 16th</span></span>
+                                </div>
                         </span>
                         <span className="noteDate">Created on: <span className='date'>March 16th</span></span>
                     </div>
