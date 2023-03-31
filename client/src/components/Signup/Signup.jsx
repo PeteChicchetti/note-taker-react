@@ -48,6 +48,9 @@ const Signup = () => {
     <SignupMain>
     <SignupContainer>
         <Card className='signupCard'>
+        {data ? (
+            <p className='signupSuccess'>Successfully created an account. Signing in...</p>
+        ) : (
             <form onSubmit={handleFormSubmit}>
                 <h2 className='signupTitle'>SignUp</h2>
                 <div className='signupUsername'>
@@ -83,13 +86,17 @@ const Signup = () => {
                         onChange={handleChange}
                     />
                 </div>
+        {error && (
+            <div className='signupError'>{error.message}</div>
+        )}
                 <div className='signupBtnContainer'>
                     <button className='signupBtn' type='submit'>SignUp</button>
                 </div>
                 <div className='switch'>
                     <a href='/login' className='loginLink'>Switch to login form</a>
                 </div>
-            </form>        
+            </form>
+        )}          
         </Card>
     </SignupContainer>
     </SignupMain>
