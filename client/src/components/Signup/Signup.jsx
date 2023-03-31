@@ -28,6 +28,21 @@ const Signup = () => {
         });
     };
 
+    /// HANDLE SUBMISSION OF FORM ///
+    const handleFormSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+        const { data } = await addUser({
+            variables: { ...formState },
+        });
+
+        Auth.login(data.addUser.token, data.addUser.user._id);
+        } catch (error) {
+        console.log(error);
+        };
+    };
+
     return (
     <>
     <SignupMain>
