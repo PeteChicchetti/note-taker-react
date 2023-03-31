@@ -18,6 +18,15 @@ const Signup = () => {
       });
       const [addUser, { error, data }] = useMutation(ADD_USER);
 
+    /// UPDATES STATE BASED ON INPUT ///
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+
+        setFormState({
+        ...formState,
+        [name]: value,
+        });
+    };
 
     return (
     <>
