@@ -89,7 +89,7 @@ const Notes = () => {
                                     <span className="mobileNoteDate">Created on: <span className='date'>March 16th</span></span>
                                 </div>
                         </span>
-                        <span className="noteDate">Created on: <span className='date'>March 16th</span></span>
+                        <span className="closedNoteDate">Created on: <span className='date'>March 16th</span></span>
                     </div>
                 </Card> 
             }
