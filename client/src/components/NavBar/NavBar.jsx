@@ -1,5 +1,5 @@
 import React from 'react';
-import Moment from 'react-moment';
+
 import AuthService from '../../utils/auth';
 import { FaBars} from 'react-icons/fa';
 import LogoSrc from '../../assets/logo.png';
@@ -8,13 +8,9 @@ import {
   NavbarContainer,
   NavLogo,
   Logo,
-  MobileIcon, 
-  NavMenu,
-  // NavItem,
-  // NavLinks,  
+  MobileIcon,  
   NavBtn, 
-  NavBtnLink,
-  Date
+  NavBtnLink
 } from './NavBarElements'
 
 const NavBar = ({ toggle }) => {
@@ -31,26 +27,12 @@ const NavBar = ({ toggle }) => {
             </MobileIcon>
           {AuthService.loggedIn() ?
             <>
-              <NavMenu>
-                <Date>
-                  <Moment format='MMMM Do YYYY'></Moment>
-                </Date>
-              </NavMenu> 
               <NavBtn>
                 <NavBtnLink onClick={logout} id="nav-link signOut">Sign Out</NavBtnLink> 
               </NavBtn>
             </>   
           :
-            <>
-              <NavMenu>
-                <Date>
-                  <Moment format='MMMM Do YYYY' style={{ display: 'none' }}></Moment>
-                </Date>
-              </NavMenu> 
-              <NavBtn>
-                <NavBtnLink onClick={logout} id="nav-link signOut" style={{ display: 'none' }}>Sign Out</NavBtnLink> 
-              </NavBtn>
-            </>  
+            null
           }    
           </NavbarContainer>  
         </Nav>

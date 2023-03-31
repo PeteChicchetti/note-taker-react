@@ -26,4 +26,4 @@ export const Title = styled.div`
     @media screen and (max-width: 280px) {
         display: block;
     }
-`
+`;

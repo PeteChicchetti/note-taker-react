@@ -3,10 +3,11 @@ import { Container, Card } from 'react-bootstrap';
 import { CiStickyNote } from "react-icons/ci";
 import { FaRegEdit } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import Moment from 'react-moment';
 import {
     NotesMain,
     NotesContainer,
-    Title
+    Title,
 } from './NotesElements'
 
 
@@ -31,7 +32,9 @@ const Notes = () => {
     <NotesMain>
     <NotesContainer >
         <Card className='cardMain'>
-            <Title><h1 className='cardTitle'>Lets add some notes!</h1><button className='addBtn' onClick={ () => {add(); close();}}>Add Note</button></Title>
+            <Title>
+                  <Moment format='MMMM Do YYYY'></Moment>
+                <button className='addBtn' onClick={ () => {add(); close();}}>Add Note</button></Title>
             <Container className='cardContainer'>
             { addNote ? 
                 <Card className='addCard'>
