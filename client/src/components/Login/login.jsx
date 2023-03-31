@@ -53,7 +53,7 @@ const Login = () => {
         {data ? (
             <p className='loginSuccess'>Successfully logged in!</p>
         ) : (
-            <form onSubmit={handleFormSubmit}>
+            <form className='loginForm' onSubmit={handleFormSubmit}>
                 <h2 className='loginTitle'>Login</h2>
                 <div className='loginEmail'>
                     <h3>Email:</h3>
