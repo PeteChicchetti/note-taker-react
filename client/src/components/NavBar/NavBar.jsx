@@ -1,14 +1,14 @@
 import React from 'react';
 
 import AuthService from '../../utils/auth';
-import { FaBars} from 'react-icons/fa';
+// import { FaBars} from 'react-icons/fa';
 import LogoSrc from '../../assets/logo.png';
 import { 
   Nav,
   NavbarContainer,
   NavLogo,
   Logo,
-  MobileIcon,  
+  // MobileIcon,  
   NavBtn, 
   NavBtnLink
 } from './NavBarElements'
@@ -22,9 +22,9 @@ const NavBar = ({ toggle }) => {
         <Nav>
           <NavbarContainer>
             <NavLogo><Logo src={LogoSrc} />Note Taker</NavLogo>
-            <MobileIcon onClick={toggle}>
+            {/* <MobileIcon onClick={toggle}>
               <FaBars />
-            </MobileIcon>
+            </MobileIcon> */}
           {AuthService.loggedIn() ?
             <>
               <NavBtn>

@@ -45,23 +45,23 @@ export const Logo = styled.img`
     margin: 5px;
 `;
 
-export const MobileIcon = styled.div`
-    display: none;
-    width: 28px;
-    height: 28px;
+// export const MobileIcon = styled.div`
+//     display: none;
+//     width: 28px;
+//     height: 28px;
 
-    @media screen and (max-width: 768px) {
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        transform: translate(-100%, 60%);
-        font-size: 1.8rem;
-        padding-top: 8px;
-        cursor: pointer;
-        color: #fff;
-    }
-`;
+//     @media screen and (max-width: 768px) {
+//         display: block;
+//         position: absolute;
+//         top: 0;
+//         right: 0;
+//         transform: translate(-100%, 60%);
+//         font-size: 1.8rem;
+//         padding-top: 8px;
+//         cursor: pointer;
+//         color: #fff;
+//     }
+// `;
 
 export const NavMenu = styled.ul`
     display: flex;
@@ -100,9 +100,9 @@ export const NavBtn = styled.nav`
     display: flex;
     align-items: center;
 
-    @media screen and (max-width: 768px) {
-       display: none; 
-    }
+    // @media screen and (max-width: 768px) {
+    //    display: none; 
+    // }
 `;
 
 export const NavBtnLink = styled(LinkR)`
