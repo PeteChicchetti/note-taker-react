@@ -10,12 +10,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Auth from './utils/auth';
 
-/// IMPORT PAGES ///
-// import Landing from './pages/Landing';
-// import Signup from './pages/Signup';
-// import Login from './pages/Login';
-// import Dashboard from './pages/Dashboard';
-
 /// IMPORT COMPONENTS ///
 import ProtectRoute from './components/ProtectRoute';
 
