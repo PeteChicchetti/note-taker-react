@@ -42,7 +42,7 @@ const resolvers = {
       return { token, user };
     },
     /// GETS ALL POSTS ///
-    notes: async () => {
+    note: async () => {
       return await Note.find({}).populate({populate: {path: 'user'}}).populate({path: 'user'}).select('-__v ');
     },
     /// ADD POST ///
