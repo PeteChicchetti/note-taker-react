@@ -73,17 +73,17 @@ return (
             <Container className='cardContainer'>
             { addNote ? 
                 <Card className='addCard'>
-                    <form className='addNoteForm'>
+                    <form className='addNoteForm' onSubmit={handleFormSubmit}>
                         <div className='addNoteHeader'>
-                            <input type="text" name='title' placeholder='Title' id='title' className='title'/>
+                            <input type="text" name='title' placeholder='Title' id='title' className='title' onChange={handleChange}/>
                             <span className='addNoteBtns'>
                                 <button className='saveBtn'>SAVE</button>
                                 <button className='cancelBtn' onClick={cancel}>CANCEL</button>
                             </span>
                         </div>
-                        <textarea type="text" name='content' placeholder='Content' id='content' className='content' />
+                        <textarea type="text" name='content' placeholder='Content' id='content' className='content' onChange={handleChange} />
                         <span className='addNoteBtnsMobile'>
-                                <button className='saveBtn'>SAVE</button>
+                                <button type='submit' className='saveBtn'>SAVE</button>
                                 <button className='cancelBtn' onClick={cancel}>CANCEL</button>
                         </span>
                     </form>
