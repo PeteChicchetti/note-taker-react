@@ -42,12 +42,12 @@ const resolvers = {
       return { token, user };
     },
     /// GETS ALL POSTS ///
-    posts: async () => {
-      return await Post.find({}).populate({populate: {path: 'user'}}).populate({path: 'user'}).select('-__v ');
+    notes: async () => {
+      return await Note.find({}).populate({populate: {path: 'user'}}).populate({path: 'user'}).select('-__v ');
     },
     /// ADD POST ///
-    addPost: async (parent, {title, content}, context) => {
-      const post = await Post.create(
+    addNote: async (parent, {title, content}, context) => {
+      const note = await Note.create(
         {title: title, content: content, user: context.user._id}
       )
       const updatedUser = await User.findOneAndUpdate(
@@ -56,7 +56,7 @@ const resolvers = {
         {new: true}
         );
 
-      return  post ;
+      return  note ;
     },
   }
 };
