@@ -10,7 +10,7 @@ import {
     Title,
 } from './NotesElements'
 
-
+import { useMutation } from '@apollo/client';
 import { ADD_Note } from '../../utils/mutations';
 
 const Notes = () => {

@@ -25,3 +25,17 @@ export const LOGIN_USER = gql`
   }
 }
 `;
+
+export const ADD_Note = gql`
+mutation AddPost($title: String!, $content: String!) {
+  addNote(title: $title, content: $content) {
+    _id
+    title
+    content
+    createdAt
+    user {
+      _id
+    }
+  }
+}
+`;
