@@ -14,6 +14,10 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
+    /// GETS ALL NOTES ///
+    notes: async () => {
+      return await Note.find({}).populate({populate: {path: 'user'}}).populate({path: 'user'}).select('-__v ');
+    },
   },
 
   Mutation: {
@@ -41,12 +45,6 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    /// GETS ALL NOTES ///
-
-    // note: async () => {
-    //   return await Note.find({}).populate({populate: {path: 'user'}}).populate({path: 'user'}).select('-__v ');
-    // },
-
     /// ADD NOTE ///
     addNote: async (parent, {title, content}, context) => {
       const note = await Note.create(
