@@ -33,7 +33,7 @@ const Notes = () => {
     <NotesContainer >
         <Card className='cardMain'>
             <Title>
-                  <Moment className='headerDate' format='MMMM Do YYYY'></Moment>
+                <Moment className='headerDate' format='MMMM Do YYYY'></Moment>
                 <button className='addBtn' onClick={ () => {add(); close();}}>Add Note</button></Title>
             <Container className='cardContainer'>
             { addNote ? 
