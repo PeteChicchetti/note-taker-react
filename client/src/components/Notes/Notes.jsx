@@ -62,7 +62,7 @@ const Notes = () => {
     //     textarea.style.height = `${scHeight}px`;
     // });
 
-    return (
+return (
     <>
     <NotesMain>
     <NotesContainer >
