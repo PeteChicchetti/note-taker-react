@@ -29,7 +29,22 @@ const Notes = () => {
       });
 
 
-    const [addNote, { error }] = useMutation(ADD_Note);  
+    const [addNote, { error }] = useMutation(ADD_Note);
+    
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+    
+        // On form submit perform mutation using form data
+        try {
+          const { data } = addNote({
+            variables: { ...formState },
+          });
+    
+          //window.location.reload();
+        } catch (err) {
+          console.error(err);
+        }
+      };
 
     // const textarea = document.querySelector('textarea');
     // textarea.addEventListener('keyup', e => {
