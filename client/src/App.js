@@ -14,7 +14,6 @@ import Auth from './utils/auth';
 import ProtectRoute from './components/ProtectRoute';
 
 import NavBar from './components/NavBar/NavBar';
-import MobileMenu from './components/MobileMenu/MobileMenu';
 import Signup from './components/Signup/Signup';
 import Login from './components/Login/Login';
 import Notes from './components/Notes/Notes';
@@ -57,7 +56,6 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <MobileMenu isOpen={isOpen} toggle={toggle}/>
         <NavBar toggle={toggle} />
         <Routes>
           <Route path='/' element={<Login />} />
