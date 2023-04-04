@@ -41,13 +41,13 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    /// GETS ALL POSTS ///
+    /// GETS ALL NOTES ///
 
     // note: async () => {
     //   return await Note.find({}).populate({populate: {path: 'user'}}).populate({path: 'user'}).select('-__v ');
     // },
-    
-    /// ADD POST ///
+
+    /// ADD NOTE ///
     addNote: async (parent, {title, content}, context) => {
       const note = await Note.create(
         {title: title, content: content, user: context.user._id}
