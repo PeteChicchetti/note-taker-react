@@ -149,6 +149,7 @@
 .noteContent {
     font-family: sans-serif;
     font-size: 14px;
+    min-height: 100px;
     line-height: 1.2;
     padding: 10px 7px;
     background-color: rgb(9, 9, 9);
