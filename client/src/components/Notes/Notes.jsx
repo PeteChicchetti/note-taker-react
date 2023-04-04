@@ -11,15 +11,25 @@ import {
 } from './NotesElements'
 
 
+import { ADD_Note } from '../../utils/mutations';
+
 const Notes = () => {
     const [showNote, setShowNote] = useState(false)
     const open = () => setShowNote(true)
     const close = () => setShowNote(false)
 
-    const [addNote, setAddNote] = useState(false)
-    const add = () => setAddNote(true)
-    const cancel = () => setAddNote(false)
+    const [addNoteBtn, setAddNoteBTN] = useState(false)
+    const add = () => setAddNoteBTN(true)
+    const cancel = () => setAddNoteBTN(false)
 
+    // addNote
+    const [formState, setFormState] = useState({
+        title: '',
+        content: '',
+      });
+
+
+    const [addNote, { error }] = useMutation(ADD_Note);  
 
     // const textarea = document.querySelector('textarea');
     // textarea.addEventListener('keyup', e => {
