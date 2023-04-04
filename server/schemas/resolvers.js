@@ -7,7 +7,7 @@ const resolvers = {
     /// GETS ONE USER ///
     user: async (parent, { userId }, context) => {
       if (context.user) {
-        const userData = await (await User.findOne({ _id: userId }).select('-__v -password'));
+        const userData = await (await User.findOne({ _id: userId }).populate('notes').select('-__v -password'));
 
         return userData;
       }
@@ -16,7 +16,7 @@ const resolvers = {
     },
     /// GETS ALL NOTES ///
     notes: async () => {
-      return await Note.find({}).populate({populate: {path: 'user'}}).populate({path: 'user'}).select('-__v ');
+      return await Note.find({}).select('-__v ');
     },
   },
 

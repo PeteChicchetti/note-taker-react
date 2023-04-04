@@ -10,8 +10,11 @@ import {
     Title,
 } from './NotesElements'
 
+import { useQuery } from '@apollo/client';
 import { useMutation } from '@apollo/client';
+import { QUERY_NOTES } from '../../utils/queries';
 import { ADD_Note } from '../../utils/mutations';
+
 
 const Notes = () => {
     const [showNote, setShowNote] = useState(false)
@@ -22,7 +25,12 @@ const Notes = () => {
     const add = () => setAddNoteBTN(true)
     const cancel = () => setAddNoteBTN(false)
 
-    // addNote
+    // LOAD NOTES
+    const { loading, data } = useQuery(QUERY_NOTES);
+    const notes = data?.notes || [];
+    console.log(data);
+
+    // ADD NOTE
     const [formState, setFormState] = useState({
         title: '',
         content: '',
@@ -92,41 +100,43 @@ return (
                 null
             }    
             { showNote ?
-                <Card className='noteCardOpen'>
+                notes.map((note) => (
+                <Card className='noteCardOpen' key={note._id}>
                     <div className='noteCardHeader openHeader'>
                         <span className='titleContainer' onClick={close}>
                             <CiStickyNote className='noteIcon'/>
-                            <h2 className='noteTitle'>What is Lorem Ipsum?</h2>
+                            <h2 className='noteTitle'>{note.title}</h2>
                         </span>
                     </div>
                     <div className='noteBorder'>
-                        <div className='noteContent'>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </div>
+                        <div className='noteContent'>{note.content}</div>
                     </div>
                     <div className='noteInfo'>
                         <span className='noteBtnContainer'>
                             <FaRegEdit className='noteBtns'/>
                             <RiDeleteBin6Line  className='noteBtns'/>
                         </span>
-                        <span className="noteDate">Created on: <span className='date'>March 16th</span></span>
+                        <span className="noteDate">Created on: <span className='date'>{note.createdAt}</span></span>
                     </div>
                 </Card>
+                ))
                 : 
-                <Card className='noteCard'>
+                notes.map((note) => (
+                <Card className='noteCard' key={note._id}>
                     <div className='noteCardHeader'>
                         <span className='closedTitleContainer' onClick={ () => {open(); cancel()}}>
                                 <span className='closedTitle'>
                                     <CiStickyNote className='noteIcon'/>
-                                    <h2 className='noteTitle'>What is Lorem Ipsum?</h2>
+                                    <h2 className='noteTitle'>{note.title}</h2>
                                 </span>
                                 <div className='mobileDateContainer'>
-                                    <span className="mobileNoteDate">Created on: <span className='date'>March 16th</span></span>
+                                    <span className="mobileNoteDate">Created on: <span className='date'>{note.createdAt}</span></span>
                                 </div>
                         </span>
-                        <span className="closedNoteDate">Created on: <span className='date'>March 16th</span></span>
+                        <span className="closedNoteDate">Created on: <span className='date'>{note.createdAt}</span></span>
                     </div>
-                </Card> 
+                </Card>
+                )) 
             }
             </Container>
         </Card>

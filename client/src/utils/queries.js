@@ -1,19 +1,14 @@
 import { gql } from "@apollo/client";
 
 export const QUERY_USER = gql`
-query user($userId: ID!) {
-  user(userId: $userId) {
-    _id
+query Query {
+  user {
     username
     email
-    courseCount
-    courses {
-      _id
-      courseName
-      startDate
-      endDate
-      description
-      instructor
+    notes {
+      title
+      content
+      createdAt
     }
   }
 }
@@ -26,9 +21,6 @@ query Query {
     content
     _id
     createdAt
-    user {
-      username
-    }
   }
 }
 `;

@@ -5,6 +5,8 @@ const typeDefs = gql`
     _id: ID!
     username: String!
     email: String!
+    password: String!
+    notes: [Note]
   }
 
   type Note {
@@ -21,8 +23,9 @@ const typeDefs = gql`
   }
 
   type Query {
-    user(userId: ID!): User
+    user: User
     notes: [Note]
+    note(noteid: ID!): Note
   }
 
   type Mutation {
