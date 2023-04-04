@@ -71,7 +71,7 @@ return (
                 <Moment className='headerDate' format='MMMM Do YYYY'></Moment>
                 <button className='addBtn' onClick={ () => {add(); close();}}>Add Note</button></Title>
             <Container className='cardContainer'>
-            { addNote ? 
+            { addNoteBtn ? 
                 <Card className='addCard'>
                     <form className='addNoteForm' onSubmit={handleFormSubmit}>
                         <div className='addNoteHeader'>
