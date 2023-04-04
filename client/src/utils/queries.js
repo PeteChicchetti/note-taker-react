@@ -19,15 +19,15 @@ query user($userId: ID!) {
 }
 `;
 
-export const ADD_POST = gql`
-mutation AddNote($title: String!, $content: String!) {
-  addPost(title: $title, content: $content) {
-    _id
+export const QUERY_NOTES = gql`
+query Query {
+  notes {
     title
     content
+    _id
     createdAt
     user {
-      _id
+      username
     }
   }
 }
