@@ -46,6 +46,16 @@ const Notes = () => {
         }
       };
 
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+
+        if (name === 'title') {
+            setFormState({ ...formState, [name]: value });
+        } else if (name === 'content') {
+            setFormState({ ...formState, [name]: value });
+        }
+    };
+
     // const textarea = document.querySelector('textarea');
     // textarea.addEventListener('keyup', e => {
     //     let scHeight = e.target.scrollHeight;
