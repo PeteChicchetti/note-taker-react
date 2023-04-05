@@ -33,10 +33,13 @@ const Notes = () => {
     const { loading, data } = useQuery(QUERY_NOTES);
     const notes = data?.notes || [];
     console.log(data);
-
     
+
     function handleClick(noteId) {
-        const activeNote = () => notes.map((note) => note._id);
+        const activeNote = () => {
+            const currentNote = notes.map((notes) => notes._id)
+            return currentNote;
+        }
         console.log(noteId, activeNote());
         if(noteId === activeNote()) {
             setShowNote(true)
@@ -119,7 +122,7 @@ return (
                 notes.map((note) => (
                 <Card className='noteCardOpen' key={note._id}>
                     <div className='noteCardHeader openHeader'>
-                        <span className='titleContainer' onClick={() => handleClick(true)}>
+                        <span className='titleContainer' onClick={() => handleClick(note._id)}>
                             <CiStickyNote className='noteIcon'/>
                             <h2 className='noteTitle'>{note.title}</h2>
                         </span>
