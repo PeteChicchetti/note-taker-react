@@ -18,8 +18,12 @@ import { ADD_Note } from '../../utils/mutations';
 
 const Notes = () => {
     const [showNote, setShowNote] = useState(false)
-    const open = () => setShowNote(true)
-    const close = () => setShowNote(false)
+
+
+
+
+    // const open = () => setShowNote(true)
+    // const close = () => setShowNote(false)
 
     const [addNoteBtn, setAddNoteBTN] = useState(false)
     const add = () => setAddNoteBTN(true)
@@ -29,6 +33,17 @@ const Notes = () => {
     const { loading, data } = useQuery(QUERY_NOTES);
     const notes = data?.notes || [];
     console.log(data);
+
+    
+    function handleClick(noteId) {
+        const activeNote = () => notes.map((note) => note._id);
+        console.log(noteId, activeNote());
+        if(noteId === activeNote()) {
+            setShowNote(true)
+        } else {
+            setShowNote(false)
+        }  
+    }
 
     // ADD NOTE
     const [formState, setFormState] = useState({
@@ -77,7 +92,7 @@ return (
         <Card className='cardMain'>
             <Title>
                 <Moment className='headerDate' format='MMMM Do YYYY'></Moment>
-                <button className='addBtn' onClick={ () => {add(); close();}}>Add Note</button>
+                <button className='addBtn' onClick={ () => {add()}}>Add Note</button>
             </Title>
             <Container className='cardContainer'>
             { addNoteBtn ? 
@@ -104,7 +119,7 @@ return (
                 notes.map((note) => (
                 <Card className='noteCardOpen' key={note._id}>
                     <div className='noteCardHeader openHeader'>
-                        <span className='titleContainer' onClick={close}>
+                        <span className='titleContainer' onClick={() => handleClick(true)}>
                             <CiStickyNote className='noteIcon'/>
                             <h2 className='noteTitle'>{note.title}</h2>
                         </span>
@@ -125,7 +140,7 @@ return (
                 notes.map((note) => (
                 <Card className='noteCard' key={note._id}>
                     <div className='noteCardHeader'>
-                        <span className='closedTitleContainer' onClick={ () => {open(); cancel()}}>
+                        <span className='closedTitleContainer' onClick={() => handleClick(note._id)}>
                                 <span className='closedTitle'>
                                     <CiStickyNote className='noteIcon'/>
                                     <h2 className='noteTitle'>{note.title}</h2>
