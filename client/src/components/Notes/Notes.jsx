@@ -51,12 +51,7 @@ const Notes = () => {
                }
                result()
             }
-           
 
-        //    for (let value of currentNote.values()) {
-        //     console.log(currentNote)
-
-           
         activeNote()  
     }
 
