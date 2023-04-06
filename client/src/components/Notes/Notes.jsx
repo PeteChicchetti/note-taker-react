@@ -36,16 +36,21 @@ const Notes = () => {
     
 
     function handleClick(noteId) {
+
+        const currentNote = notes.map((notes) => notes._id);
+
         const activeNote = () => {
-            const currentNote = notes.map((notes) => notes._id)
-            return currentNote;
+           for (let value of currentNote.values()) {
+            console.log(value === noteId)
+
+            if(value === noteId) {
+                setShowNote(false)
+            } else {
+                setShowNote(true)
+            }
+           }
         }
-        console.log(noteId, activeNote());
-        if(noteId === activeNote()) {
-            setShowNote(true)
-        } else {
-            setShowNote(false)
-        }  
+        activeNote()  
     }
 
     // ADD NOTE
