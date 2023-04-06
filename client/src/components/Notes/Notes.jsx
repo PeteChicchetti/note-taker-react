@@ -19,9 +19,6 @@ import { ADD_Note } from '../../utils/mutations';
 const Notes = () => {
     const [showNote, setShowNote] = useState(false)
 
-
-
-
     // const open = () => setShowNote(true)
     // const close = () => setShowNote(false)
 
@@ -40,16 +37,26 @@ const Notes = () => {
         const currentNote = notes.map((notes) => notes._id);
 
         const activeNote = () => {
-           for (let value of currentNote.values()) {
-            console.log(value === noteId)
+            currentNote.forEach(function(value, key) {
+                console.log(key + ' = ' + value);
 
-            if(value === noteId) {
-                setShowNote(false)
-            } else {
-                setShowNote(true)
+            })
+            const result = () => {
+                for(let i=0; i<currentNote.length; i++) {
+                    if (currentNote[i] === noteId)
+                    console.log(currentNote[i] + ' & ' + noteId)
+
+                }
+
+               }
+               result()
             }
-           }
-        }
+           
+
+        //    for (let value of currentNote.values()) {
+        //     console.log(currentNote)
+
+           
         activeNote()  
     }
 
@@ -148,7 +155,7 @@ return (
                 notes.map((note) => (
                 <Card className='noteCard' key={note._id}>
                     <div className='noteCardHeader'>
-                        <span className='closedTitleContainer' onClick={() => handleClick(note._id)}>
+                        <span className='closedTitleContainer'  onClick={() => handleClick(note._id)}>
                                 <span className='closedTitle'>
                                     <CiStickyNote className='noteIcon'/>
                                     <h2 className='noteTitle'>{note.title}</h2>
