@@ -35,21 +35,23 @@ const Notes = () => {
     function handleClick(noteId) {
 
         const currentNote = notes.map((notes) => notes._id);
+            console.log(currentNote);
 
         const activeNote = () => {
-            currentNote.forEach(function(value, key) {
-                console.log(key + ' = ' + value);
+            // currentNote.forEach(function(value, key) {
+            //     console.log(key + ' = ' + value);
 
-            })
-            const result = () => {
+            // })
+            // const result = () => {
                 for(let i=0; i<currentNote.length; i++) {
                     if (currentNote[i] === noteId)
                     console.log(currentNote[i] + ' & ' + noteId)
+                    setShowNote(true)
 
                 }
 
-               }
-               result()
+            //    }
+            //    result()
             }
 
         activeNote()  
@@ -124,46 +126,46 @@ return (
                 </Card>
                 :
                 null
-            }    
-            { showNote ?
-                notes.map((note) => (
-                <Card className='noteCardOpen' key={note._id}>
-                    <div className='noteCardHeader openHeader'>
-                        <span className='titleContainer' onClick={() => handleClick(note._id)}>
-                            <CiStickyNote className='noteIcon'/>
-                            <h2 className='noteTitle'>{note.title}</h2>
-                        </span>
-                    </div>
-                    <div className='noteBorder'>
-                        <div className='noteContent'>{note.content}</div>
-                    </div>
-                    <div className='noteInfo'>
-                        <span className='noteBtnContainer'>
-                            <FaRegEdit className='noteBtns'/>
-                            <RiDeleteBin6Line  className='noteBtns'/>
-                        </span>
-                        <span className="noteDate">Created on: <span className='date'>{note.createdAt}</span></span>
-                    </div>
-                </Card>
-                ))
-                : 
-                notes.map((note) => (
-                <Card className='noteCard' key={note._id}>
-                    <div className='noteCardHeader'>
-                        <span className='closedTitleContainer'  onClick={() => handleClick(note._id)}>
-                                <span className='closedTitle'>
+            }
+                {notes.map((note) => (    
+                    <>
+                    { showNote ?
+                        <Card className='noteCardOpen' key={note._id}>
+                            <div className='noteCardHeader openHeader'>
+                                <span className='titleContainer' onClick={() => handleClick(note._id)}>
                                     <CiStickyNote className='noteIcon'/>
                                     <h2 className='noteTitle'>{note.title}</h2>
                                 </span>
-                                <div className='mobileDateContainer'>
-                                    <span className="mobileNoteDate">Created on: <span className='date'>{note.createdAt}</span></span>
-                                </div>
-                        </span>
-                        <span className="closedNoteDate">Created on: <span className='date'>{note.createdAt}</span></span>
-                    </div>
-                </Card>
-                )) 
-            }
+                            </div>
+                            <div className='noteBorder'>
+                                <div className='noteContent'>{note.content}</div>
+                            </div>
+                            <div className='noteInfo'>
+                                <span className='noteBtnContainer'>
+                                    <FaRegEdit className='noteBtns'/>
+                                    <RiDeleteBin6Line  className='noteBtns'/>
+                                </span>
+                                <span className="noteDate">Created on: <span className='date'>{note.createdAt}</span></span>
+                            </div>
+                        </Card>  
+                        :
+                        <Card className='noteCard' key={note._id}>
+                            <div className='noteCardHeader'>
+                                <span className='closedTitleContainer'  onClick={() => handleClick(note._id)}>
+                                        <span className='closedTitle'>
+                                            <CiStickyNote className='noteIcon'/>
+                                            <h2 className='noteTitle'>{note.title}</h2>
+                                        </span>
+                                        <div className='mobileDateContainer'>
+                                            <span className="mobileNoteDate">Created on: <span className='date'>{note.createdAt}</span></span>
+                                        </div>
+                                </span>
+                                <span className="closedNoteDate">Created on: <span className='date'>{note.createdAt}</span></span>
+                            </div>
+                        </Card>
+                    }
+                    </> 
+                ))}
             </Container>
         </Card>
     </NotesContainer>
