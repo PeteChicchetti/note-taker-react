@@ -95,10 +95,6 @@
     border: 1px solid #15cdfc;
 }
 
-.noteCardOpen {
-    border: 1px solid #15cdfc;
-}
-
 .noteCardHeader{
     display: flex;
     justify-content: space-between;

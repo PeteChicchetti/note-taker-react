@@ -128,9 +128,9 @@ return (
                 null
             }
                 {notes.map((note) => (    
-                    <>
-                    { showNote ?
-                        <Card className='noteCardOpen' key={note._id}>
+                        <Card className='noteCard' key={note._id}>
+                        { showNote ?
+                        <>
                             <div className='noteCardHeader openHeader'>
                                 <span className='titleContainer' onClick={() => handleClick(note._id)}>
                                     <CiStickyNote className='noteIcon'/>
@@ -147,9 +147,9 @@ return (
                                 </span>
                                 <span className="noteDate">Created on: <span className='date'>{note.createdAt}</span></span>
                             </div>
-                        </Card>  
+                        </>
                         :
-                        <Card className='noteCard' key={note._id}>
+                        <>
                             <div className='noteCardHeader'>
                                 <span className='closedTitleContainer'  onClick={() => handleClick(note._id)}>
                                         <span className='closedTitle'>
@@ -162,9 +162,9 @@ return (
                                 </span>
                                 <span className="closedNoteDate">Created on: <span className='date'>{note.createdAt}</span></span>
                             </div>
+                        </> 
+                        }
                         </Card>
-                    }
-                    </> 
                 ))}
             </Container>
         </Card>
