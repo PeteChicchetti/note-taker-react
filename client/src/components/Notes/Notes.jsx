@@ -91,6 +91,16 @@ const Notes = () => {
         }
     };
 
+    // DELETE NOTE
+    const [deleteNote, { error3 }] = useMutation(DELETE_NOTE);
+
+    const handleNoteDelete = async (event) => {
+        event.preventDefault();
+        const data = await deleteNote({
+            variables: { noteid: notes._id },
+        });
+    };
+
     // const textarea = document.querySelector('textarea');
     // textarea.addEventListener('keyup', e => {
     //     let scHeight = e.target.scrollHeight;
