@@ -33,6 +33,7 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
 
     addNote(title: String!, content: String!): Note
+    deleteNote(noteid: ID!): Note
   }
 `;
 
