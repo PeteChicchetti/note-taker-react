@@ -13,7 +13,7 @@ import {
 import { useQuery } from '@apollo/client';
 import { useMutation } from '@apollo/client';
 import { QUERY_NOTES } from '../../utils/queries';
-import { ADD_Note } from '../../utils/mutations';
+import { ADD_NOTE, DELETE_NOTE } from '../../utils/mutations';
 
 
 const Notes = () => {
@@ -64,7 +64,7 @@ const Notes = () => {
       });
 
 
-    const [addNote, { error }] = useMutation(ADD_Note);
+    const [addNote, { error }] = useMutation(ADD_NOTE);
     
     const handleFormSubmit = async (event) => {
         event.preventDefault();
@@ -153,7 +153,7 @@ return (
                     <div className='noteInfo'>
                         <span className='noteBtnContainer'>
                             <FaRegEdit className='noteBtns'/>
-                            <RiDeleteBin6Line  className='noteBtns'/>
+                            <RiDeleteBin6Line  className='noteBtns' onClick={handleNoteDelete}/>
                         </span>
                         <span className="noteDate">Created on: <span className='date'>{note.createdAt}</span></span>
                     </div>
