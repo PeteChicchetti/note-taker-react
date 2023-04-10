@@ -26,7 +26,7 @@ export const LOGIN_USER = gql`
 }
 `;
 
-export const ADD_Note = gql`
+export const ADD_NOTE = gql`
 mutation AddNote($title: String!, $content: String!) {
   addNote(title: $title, content: $content) {
     _id
@@ -36,6 +36,14 @@ mutation AddNote($title: String!, $content: String!) {
     user {
       _id
     }
+  }
+}
+`;
+
+export const DELETE_NOTE = gql`
+  mutation deleteNote($noteid: ID!) {
+    deleteNote(noteid: $noteid) {
+      createdAt
   }
 }
 `;
