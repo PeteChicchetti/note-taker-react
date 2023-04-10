@@ -58,6 +58,17 @@ const resolvers = {
 
       return  note ;
     },
+    ///DELETE NOTE///
+    deleteNote: async (parent, { noteid }, context) => {
+      const note = await Note.findOne({ note: noteid });
+      const deletedNote = await Note.findOneAndDelete({ note: noteid });
+      const updatedUser = await User.findOneAndUpdate(
+        {_id: context.user._id},
+        {$pull:{note: note._id}},
+        {new: true}
+        );
+      return { deletedNote, updatedUser };
+    }
   }
 };
 
