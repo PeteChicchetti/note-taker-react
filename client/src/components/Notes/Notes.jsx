@@ -12,8 +12,10 @@ import {
 
 import { useQuery } from '@apollo/client';
 import { useMutation } from '@apollo/client';
+
 import { QUERY_NOTES } from '../../utils/queries';
-import { ADD_NOTE, DELETE_NOTE } from '../../utils/mutations';
+import { ADD_NOTE } from '../../utils/mutations';
+import { DELETE_NOTE } from '../../utils/mutations';
 
 
 const Notes = () => {
@@ -38,33 +40,25 @@ const Notes = () => {
             console.log(currentNote);
 
         const activeNote = () => {
-            // currentNote.forEach(function(value, key) {
-            //     console.log(key + ' = ' + value);
-
-            // })
-            // const result = () => {
                 for(let i=0; i<currentNote.length; i++) {
                     if (currentNote[i] === noteId)
                     console.log(currentNote[i] + ' & ' + noteId)
                     setShowNote(true)
-
                 }
-
-            //    }
-            //    result()
             }
 
         activeNote()  
     }
+
+
+    const [addNote, { error }] = useMutation(ADD_NOTE);
+    const [deleteNote, { error2 }] = useMutation(DELETE_NOTE);
 
     // ADD NOTE
     const [formState, setFormState] = useState({
         title: '',
         content: '',
       });
-
-
-    const [addNote, { error }] = useMutation(ADD_NOTE);
     
     const handleFormSubmit = async (event) => {
         event.preventDefault();
@@ -91,8 +85,6 @@ const Notes = () => {
         }
     };
 
-    // DELETE NOTE
-    const [deleteNote, { error3 }] = useMutation(DELETE_NOTE);
 
     const handleNoteDelete = async (event) => {
         event.preventDefault();
@@ -100,6 +92,7 @@ const Notes = () => {
             variables: { noteid: notes._id },
         });
     };
+
 
     // const textarea = document.querySelector('textarea');
     // textarea.addEventListener('keyup', e => {
