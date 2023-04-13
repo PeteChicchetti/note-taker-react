@@ -18,6 +18,10 @@ const resolvers = {
     notes: async () => {
       return await Note.find({}).select('-__v ');
     },
+    /// GETS ONE NOTE ///
+    note: async (parent, { noteid }) => {
+      return await Note.findOne({ _id: noteid }).populate({path: 'user'}).select('-__v');
+    },
   },
 
   Mutation: {
@@ -58,17 +62,17 @@ const resolvers = {
 
       return  note ;
     },
-    ///DELETE NOTE///
+    ///DELETE POST///
     deleteNote: async (parent, { noteid }, context) => {
       const note = await Note.findOne({ note: noteid });
       const deletedNote = await Note.findOneAndDelete({ note: noteid });
       const updatedUser = await User.findOneAndUpdate(
         {_id: context.user._id},
-        {$pull:{note: note._id}},
+        {$pull:{notes: note._id}},
         {new: true}
         );
       return { deletedNote, updatedUser };
-    }
+    },
   }
 };
 

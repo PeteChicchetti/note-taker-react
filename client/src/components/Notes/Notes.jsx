@@ -11,6 +11,7 @@ import {
 } from './NotesElements'
 
 import { useQuery } from '@apollo/client';
+import { useParams } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
 import { QUERY_NOTES } from '../../utils/queries';
@@ -31,8 +32,7 @@ const Notes = () => {
     // LOAD NOTES
     const { loading, data } = useQuery(QUERY_NOTES);
     const notes = data?.notes || [];
-    console.log(data);
-    
+    console.log(notes);
 
     function handleClick(noteId) {
 
@@ -87,9 +87,16 @@ const Notes = () => {
 
 
     const handleNoteDelete = async (event) => {
+            const removeNote = notes.map((notes) => notes._id);
+            console.log(removeNote);
+
+            for(let i=0; i<removeNote.length; i++) {
+                console.log(removeNote[i])
+            }
+        
         event.preventDefault();
         const data = await deleteNote({
-            variables: { noteid: notes._id },
+            variables: { noteid: removeNote[i]._id },
         });
     };
 
