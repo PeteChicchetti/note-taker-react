@@ -87,16 +87,9 @@ const Notes = () => {
 
 
     const handleNoteDelete = async (event) => {
-            const removeNote = notes.map((notes) => notes._id);
-            console.log(removeNote);
-
-            for(let i=0; i<removeNote.length; i++) {
-                console.log(removeNote[i])
-            }
-        
         event.preventDefault();
         const data = await deleteNote({
-            variables: { noteid: removeNote[i]._id },
+            variables: { noteid: notes[0]._id },
         });
     };
 
