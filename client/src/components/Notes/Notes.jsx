@@ -21,9 +21,10 @@ import { DELETE_NOTE } from '../../utils/mutations';
 
 const Notes = () => {
     const [showNote, setShowNote] = useState(false)
+    const [editNote, setEditNote] = useState(false)
 
-    // const open = () => setShowNote(true)
-    // const close = () => setShowNote(false)
+    const open = () => setShowNote(true)
+    const close = () => setShowNote(false)
 
     const [addNoteBtn, setAddNoteBTN] = useState(false)
     const add = () => setAddNoteBTN(true)
@@ -107,7 +108,7 @@ return (
         <Card className='cardMain'>
             <Title>
                 <Moment className='headerDate' format='MMMM Do YYYY'></Moment>
-                <button className='addBtn' onClick={ () => {add()}}>Add Note</button>
+                <button className='addBtn' onClick={ () => {add(); close()}}>Add Note</button>
             </Title>
             <Container className='cardContainer'>
             { addNoteBtn ? 
