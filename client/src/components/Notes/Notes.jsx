@@ -22,6 +22,7 @@ import { DELETE_NOTE } from '../../utils/mutations';
 const Notes = () => {
     const [showNote, setShowNote] = useState(false)
     const [editNote, setEditNote] = useState(false)
+    const [selectedIndex, setSelectedIndex] = useState(-1);
 
     const open = () => setShowNote(true)
     const close = () => setShowNote(false)
@@ -131,9 +132,9 @@ return (
                 :
                 null
             }
-            {notes.map((note) => (    
+            {notes.map((note, index) => (    
                 <Card className='noteCard' key={note._id}>
-                { showNote ?
+                { selectedIndex === index ?
                 <>
                     <div className='noteCardHeader openHeader'>
                         <span className='titleContainer' onClick={() => handleClick(note._id)}>
@@ -155,7 +156,7 @@ return (
                 :
                 <>
                     <div className='noteCardHeader'>
-                        <span className='closedTitleContainer'  onClick={() => handleClick(note._id)}>
+                        <span className='closedTitleContainer'  onClick={() => { setSelectedIndex(index) }}>
                                 <span className='closedTitle'>
                                     <CiStickyNote className='noteIcon'/>
                                     <h2 className='noteTitle'>{note.title}</h2>
