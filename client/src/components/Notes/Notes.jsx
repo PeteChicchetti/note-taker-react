@@ -22,12 +22,10 @@ import { DELETE_NOTE } from '../../utils/mutations';
 const Notes = () => {
     const [showNote, setShowNote] = useState(false)
     const [editNote, setEditNote] = useState(false)
+    const [addNoteBtn, setAddNoteBTN] = useState(false)
     const [selectedIndex, setSelectedIndex] = useState(-1);
 
-    const open = () => setShowNote(true)
-    const close = () => setShowNote(false)
-
-    const [addNoteBtn, setAddNoteBTN] = useState(false)
+    // OPEN and CLOSE add note or open note
     const add = () => setAddNoteBTN(true)
     const cancel = () => setAddNoteBTN(false)
 
@@ -55,7 +53,6 @@ const Notes = () => {
             variables: { ...formState },
           });
     
-          //window.location.reload();
         } catch (err) {
           console.error(err);
         }
@@ -93,7 +90,7 @@ return (
         <Card className='cardMain'>
             <Title>
                 <Moment className='headerDate' format='MMMM Do YYYY'></Moment>
-                <button className='addBtn' onClick={ () => {add(); close()}}>Add Note</button>
+                <button className='addBtn' onClick={ () => {add(); setSelectedIndex(-1)}}>Add Note</button>
             </Title>
             <Container className='cardContainer'>
             { addNoteBtn ? 
@@ -140,7 +137,7 @@ return (
                 :
                 <>
                     <div className='noteCardHeader'>
-                        <span className='closedTitleContainer'  onClick={() => { setSelectedIndex(index) }}>
+                        <span className='closedTitleContainer'  onClick={() => { setSelectedIndex(index); cancel() }}>
                                 <span className='closedTitle'>
                                     <CiStickyNote className='noteIcon'/>
                                     <h2 className='noteTitle'>{note.title}</h2>
