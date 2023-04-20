@@ -36,23 +36,7 @@ const Notes = () => {
     const notes = data?.notes || [];
     console.log(notes);
 
-    function handleClick(noteId) {
-
-        const currentNote = notes.map((notes) => notes._id);
-            console.log(currentNote);
-
-        const activeNote = () => {
-                for(let i=0; i<currentNote.length; i++) {
-                    if (currentNote[i] === noteId)
-                    console.log(currentNote[i] + ' & ' + noteId)
-                    setShowNote(true)
-                }
-            }
-
-        activeNote()  
-    }
-
-
+    
     const [addNote, { error }] = useMutation(ADD_NOTE);
     const [deleteNote, { error2 }] = useMutation(DELETE_NOTE);
 
@@ -137,7 +121,7 @@ return (
                 { selectedIndex === index ?
                 <>
                     <div className='noteCardHeader openHeader'>
-                        <span className='titleContainer' onClick={() => handleClick(note._id)}>
+                        <span className='titleContainer'>
                             <CiStickyNote className='noteIcon'/>
                             <h2 className='noteTitle'>{note.title}</h2>
                         </span>
