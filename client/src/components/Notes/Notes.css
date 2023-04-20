@@ -2,7 +2,7 @@
 .cardMain {
     background-color: #000;
     color: white;
-    padding: 6px;
+    padding: 6px 6px 1px 6px;
     border-radius: 8px;
 }
 
@@ -77,6 +77,13 @@
 .cardContainer {
     margin: auto;
     max-width: 1100px;
+}
+
+.noNotes {
+    text-align: center;
+    font-family: sans-serif;
+    margin-bottom: 6px;
+    font-size: 18px;
 }
 
 .noteCard, .noteCardOpen {

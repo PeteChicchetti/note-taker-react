@@ -113,6 +113,7 @@ return (
                 :
                 null
             }
+            {notes.length === 0 && <p className='noNotes'>No notes found</p>}
             {notes.map((note, index) => (    
                 <Card className='noteCard' key={note._id}>
                 { selectedIndex === index ?
