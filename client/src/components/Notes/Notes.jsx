@@ -19,7 +19,7 @@ import { ADD_NOTE } from '../../utils/mutations';
 import { DELETE_NOTE } from '../../utils/mutations';
 
 
-const Notes = () => {
+const Notes = (props) => {
     const [showNote, setShowNote] = useState(false)
     const [editNote, setEditNote] = useState(false)
     const [addNoteBtn, setAddNoteBTN] = useState(false)
@@ -75,8 +75,7 @@ const Notes = () => {
             variables: { noteid: notes[0]._id },
         });
     };
-
-
+    
     // const textarea = document.querySelector('textarea');
     // textarea.addEventListener('keyup', e => {
     //     let scHeight = e.target.scrollHeight;
@@ -114,7 +113,7 @@ return (
                 null
             }
             <div className="alert alert-primary alert-dismissible fade show" role="alert">
-                <button type='button' className="btn-close" data-bs-dismiss="alert"></button>
+                Note added successfully!<button type='button' className="btn-close" data-bs-dismiss="alert"></button>
             </div>   
             {notes.length === 0 && <p className='noNotes'>No notes found</p>}
             {notes.map((note, index) => (    

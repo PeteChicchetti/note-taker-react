@@ -73,6 +73,14 @@
     display: none;
 }
 
+/*--- Alert ---*/
+.alert {
+    font-family: sans-serif;
+    margin: 0px 5px 12px 5px;
+    padding: 20px 20px;
+
+}
+
 /*--- Individual Cards ---*/
 .cardContainer {
     margin: auto;
