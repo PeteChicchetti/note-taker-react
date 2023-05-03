@@ -113,6 +113,9 @@ return (
                 :
                 null
             }
+            <div className="alert alert-primary alert-dismissible fade show" role="alert">
+                <button type='button' className="btn-close" data-bs-dismiss="alert"></button>
+            </div>   
             {notes.length === 0 && <p className='noNotes'>No notes found</p>}
             {notes.map((note, index) => (    
                 <Card className='noteCard' key={note._id}>
