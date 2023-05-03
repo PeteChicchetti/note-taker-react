@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Container, Card } from 'react-bootstrap';
+import { ReactNode } from "react";
+import { Alert, Container, Card } from 'react-bootstrap';
 import { CiStickyNote } from "react-icons/ci";
 import { FaRegEdit } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
@@ -18,11 +19,11 @@ import { QUERY_NOTES } from '../../utils/queries';
 import { ADD_NOTE } from '../../utils/mutations';
 import { DELETE_NOTE } from '../../utils/mutations';
 
-
-const Notes = (props) => {
+const Notes = () => {
     const [showNote, setShowNote] = useState(false)
     const [editNote, setEditNote] = useState(false)
     const [addNoteBtn, setAddNoteBTN] = useState(false)
+    const [showAlert, setShowAlert] = useState(true);
     const [selectedIndex, setSelectedIndex] = useState(-1);
 
     // OPEN and CLOSE add note or open note
@@ -75,7 +76,7 @@ const Notes = (props) => {
             variables: { noteid: notes[0]._id },
         });
     };
-    
+
     // const textarea = document.querySelector('textarea');
     // textarea.addEventListener('keyup', e => {
     //     let scHeight = e.target.scrollHeight;
@@ -112,9 +113,15 @@ return (
                 :
                 null
             }
-            <div className="alert alert-primary alert-dismissible fade show" role="alert">
-                Note added successfully!<button type='button' className="btn-close" data-bs-dismiss="alert"></button>
-            </div>   
+            { showAlert ? <Alert variant="primary" onClose={() => setShowAlert(false)} dismissible>
+                        <Alert.Heading>Success!</Alert.Heading>
+                        <p>
+                            Your note has been added!
+                        </p>
+                    </Alert>
+            :
+                    null
+            }   
             {notes.length === 0 && <p className='noNotes'>No notes found</p>}
             {notes.map((note, index) => (    
                 <Card className='noteCard' key={note._id}>
