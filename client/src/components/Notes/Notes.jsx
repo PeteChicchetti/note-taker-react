@@ -23,7 +23,7 @@ const Notes = () => {
     const [showNote, setShowNote] = useState(false)
     const [editNote, setEditNote] = useState(false)
     const [addNoteBtn, setAddNoteBTN] = useState(false)
-    const [showAlert, setShowAlert] = useState(true);
+    const [showAlert, setShowAlert] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState(-1);
 
     // OPEN and CLOSE add note or open note
@@ -105,7 +105,7 @@ return (
                         </div>
                         <textarea type="text" name='content' placeholder='Content' id='content' className='content' onChange={handleChange} />
                         <span className='addNoteBtnsMobile'>
-                                <button type='submit' className='saveBtn'>SAVE</button>
+                                <button type='submit' className='saveBtn' onClick={() => {setShowAlert(true)}}>SAVE</button>
                                 <button className='cancelBtn' onClick={cancel}>CANCEL</button>
                         </span>
                     </form>
@@ -113,15 +113,14 @@ return (
                 :
                 null
             }
-            { showAlert ? <Alert variant="primary" onClose={() => setShowAlert(false)} dismissible>
+                    <Alert showAlert={showAlert} variant="primary" onClose={() => setShowAlert(false)} dismissible>
                         <Alert.Heading>Success!</Alert.Heading>
                         <p>
                             Your note has been added!
                         </p>
                     </Alert>
-            :
-                    null
-            }   
+                    {!showAlert && null }  
+
             {notes.length === 0 && <p className='noNotes'>No notes found</p>}
             {notes.map((note, index) => (    
                 <Card className='noteCard' key={note._id}>
