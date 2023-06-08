@@ -23,7 +23,7 @@ const Notes = () => {
     const [showNote, setShowNote] = useState(false)
     const [editNote, setEditNote] = useState(false)
     const [addNoteBtn, setAddNoteBTN] = useState(false)
-    const [showAlert, setShowAlert] = useState(false);
+    const [showAlert, setShowAlert] = useState(true);
     const [selectedIndex, setSelectedIndex] = useState(-1);
 
     // OPEN and CLOSE add note or open note
@@ -112,13 +112,15 @@ return (
                 :
                 null
             }
-                    <Alert showAlert={showAlert} variant="primary" onClose={() => setShowAlert(false)} dismissible>
+                    { showAlert ? <Alert variant="primary" onClose={() => setShowAlert(false)} dismissible>
                         <Alert.Heading>Success!</Alert.Heading>
                         <p>
                             Your note has been added!
                         </p>
                     </Alert>
-                    {!showAlert && null }  
+                    :
+                    null
+                    }  
 
             {notes.length === 0 && <p className='noNotes'>No notes found</p>}
             {notes.map((note, index) => (    
