@@ -62,13 +62,10 @@ const resolvers = {
 
       return  note ;
     },
-    ///DELETE POST///
+    ///DELETE NOTE///
     deleteNote: async (parent, { noteid }, context) => {
       console.log("noteid: ", noteid)
-      const note = await Note.findOne({ _id: noteid });
-      console.log("note: ", note)
       const deletedNote = await Note.findOneAndDelete({ _id: noteid });
-      //const deletedNote = null;
       return { deletedNote };
     },
   }
