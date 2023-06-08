@@ -33,7 +33,7 @@ const Notes = () => {
     // LOAD NOTES
     const { loading, data } = useQuery(QUERY_NOTES);
     const notes = data?.notes || [];
-    console.log(notes);
+    console.log("Notes:", notes);
 
     
     const [addNote, { error }] = useMutation(ADD_NOTE);
@@ -70,13 +70,12 @@ const Notes = () => {
     };
 
 
-    const handleNoteDelete = async (event) => {
-        event.preventDefault();
+
+    const noteDeleteById = async (note_id) => {
         const data = await deleteNote({
-            variables: { noteid: notes[0]._id },
+            variables: { noteid: note_id },
         });
     };
-
     // const textarea = document.querySelector('textarea');
     // textarea.addEventListener('keyup', e => {
     //     let scHeight = e.target.scrollHeight;
@@ -138,7 +137,7 @@ return (
                     <div className='noteInfo'>
                         <span className='noteBtnContainer'>
                             <FaRegEdit className='noteBtns'/>
-                            <RiDeleteBin6Line  className='noteBtns' onClick={handleNoteDelete}/>
+                            <RiDeleteBin6Line className='noteBtns' onClick={() => { noteDeleteById(note._id); cancel() }} />
                         </span>
                         <span className="noteDate">Created on: <span className='date'>{note.createdAt}</span></span>
                     </div>
