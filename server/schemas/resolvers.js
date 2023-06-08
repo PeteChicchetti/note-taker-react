@@ -16,12 +16,12 @@ const resolvers = {
     },
     /// GETS ALL NOTES ///
     notes: async () => {
-      return await Note.find({}).select('-__v ');
+      return await Note.find({}).sort({"createdAt": -1}).select('-__v ');
     },
     /// GETS ONE NOTE ///
-    note: async (parent, { noteid }) => {
-      return await Note.findOne({ _id: noteid }).populate({path: 'user'}).select('-__v');
-    },
+    // note: async (parent, { noteid }) => {
+    //   return await Note.findOne({ _id: noteid }).populate({path: 'user'}).select('-__v');
+    // },
   },
 
   Mutation: {
