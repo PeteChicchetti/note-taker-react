@@ -64,14 +64,12 @@ const resolvers = {
     },
     ///DELETE POST///
     deleteNote: async (parent, { noteid }, context) => {
-      const note = await Note.findOne({ note: noteid });
-      const deletedNote = await Note.findOneAndDelete({ note: noteid });
-      const updatedUser = await User.findOneAndUpdate(
-        {_id: context.user._id},
-        {$pull:{notes: note._id}},
-        {new: true}
-        );
-      return { deletedNote, updatedUser };
+      console.log("noteid: ", noteid)
+      const note = await Note.findOne({ _id: noteid });
+      console.log("note: ", note)
+      const deletedNote = await Note.findOneAndDelete({ _id: noteid });
+      //const deletedNote = null;
+      return { deletedNote };
     },
   }
 };
