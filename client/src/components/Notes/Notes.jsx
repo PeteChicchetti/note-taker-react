@@ -53,6 +53,7 @@ const Notes = () => {
           const { data } = addNote({
             variables: { ...formState },
           });
+          cancel();
           setShowAlert(true);
     
         } catch (err) {
