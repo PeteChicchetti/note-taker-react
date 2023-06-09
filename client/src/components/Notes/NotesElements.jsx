@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 export const NotesMain = styled.div`
-    background: #414141;
-    height: calc(100vh - 80px);
+
 `;
 
 export const NotesContainer = styled.div`

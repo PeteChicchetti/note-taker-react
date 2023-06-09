@@ -1,4 +1,8 @@
 /*--- Main Card Container ---*/
+body {
+    background: #414141;
+}
+
 .cardMain {
     background-color: #000;
     color: white;
