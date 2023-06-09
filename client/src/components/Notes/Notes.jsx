@@ -23,7 +23,7 @@ const Notes = () => {
     const [showNote, setShowNote] = useState(false)
     const [editNote, setEditNote] = useState(false)
     const [addNoteBtn, setAddNoteBTN] = useState(false)
-    const [showAlert, setShowAlert] = useState(true);
+    const [showAlert, setShowAlert] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState(-1);
 
     // OPEN and CLOSE add note or open note
@@ -53,6 +53,7 @@ const Notes = () => {
           const { data } = addNote({
             variables: { ...formState },
           });
+          setShowAlert(true);
     
         } catch (err) {
           console.error(err);
