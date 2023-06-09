@@ -115,13 +115,13 @@ return (
             }
                     { showAlert ? <Alert variant="primary" onClose={() => setShowAlert(false)} dismissible>
                         <Alert.Heading>Success!</Alert.Heading>
-                        <p>
-                            Your note has been added!
-                        </p>
-                    </Alert>
+                            <p>
+                                Your note has been added!
+                            </p>
+                        </Alert>
                     :
-                    null
-                    }  
+                        null
+                    } 
 
             {notes.length === 0 && <p className='noNotes'>No notes found</p>}
             {notes.map((note, index) => (    
