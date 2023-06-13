@@ -34,12 +34,11 @@ const Notes = () => {
     const { loading, data } = useQuery(QUERY_NOTES);
     const notes = data?.notes || [];
     console.log("Notes:", notes);
-
-    
+     
     const [addNote, { error }] = useMutation(ADD_NOTE);
     const [deleteNote, { error2 }] = useMutation(DELETE_NOTE);
 
-    // ADD NOTE
+    // ADD NOTE FORM
     const [formState, setFormState] = useState({
         title: '',
         content: '',
@@ -71,18 +70,12 @@ const Notes = () => {
         }
     };
 
-
-
     const noteDeleteById = async (note_id) => {
         const data = await deleteNote({
             variables: { noteid: note_id },
         });
     };
-    // const textarea = document.querySelector('textarea');
-    // textarea.addEventListener('keyup', e => {
-    //     let scHeight = e.target.scrollHeight;
-    //     textarea.style.height = `${scHeight}px`;
-    // });
+
 
 return (
     <>
