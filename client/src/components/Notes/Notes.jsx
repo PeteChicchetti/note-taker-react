@@ -55,6 +55,7 @@ const Notes = () => {
           });
           cancel();
           refetch();
+          setDeleteAlert(false);
           setSuccessAlert(true);
     
         } catch (err) {
@@ -77,6 +78,7 @@ const Notes = () => {
             variables: { noteid: note_id },
         });
         refetch();
+        setSuccessAlert(false);
         setDeleteAlert(true);
     };
 
