@@ -23,7 +23,7 @@ const Notes = () => {
     const [showNote, setShowNote] = useState(false)
     const [editNote, setEditNote] = useState(false)
     const [addNoteBtn, setAddNoteBTN] = useState(false)
-    const [showAlert, setShowAlert] = useState(false);
+    const [successAlert, setSuccessAlert] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState(-1);
 
     // OPEN and CLOSE add note or open note
@@ -53,7 +53,7 @@ const Notes = () => {
             variables: { ...formState },
           });
           cancel();
-          setShowAlert(true);
+          setSuccessAlert(true);
     
         } catch (err) {
           console.error(err);
@@ -99,7 +99,7 @@ return (
                         </div>
                         <textarea type="text" name='content' placeholder='Content' id='content' className='content' onChange={handleChange} />
                         <span className='addNoteBtnsMobile'>
-                                <button type='submit' className='saveBtn' onClick={() => {setShowAlert(true)}}>SAVE</button>
+                                <button type='submit' className='saveBtn' onClick={() => {setSuccessAlert(true)}}>SAVE</button>
                                 <button className='cancelBtn' onClick={cancel}>CANCEL</button>
                         </span>
                     </form>
@@ -107,7 +107,7 @@ return (
                 :
                 null
             }
-                    { showAlert ? <Alert variant="primary" onClose={() => setShowAlert(false)} dismissible>
+                    { successAlert ? <Alert variant="primary" onClose={() => setSuccessAlert(false)} dismissible>
                         <Alert.Heading>Success!</Alert.Heading>
                             <p>
                                 Your note has been added!
