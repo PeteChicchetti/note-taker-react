@@ -32,10 +32,10 @@ const Notes = () => {
     const cancel = () => setAddNoteBTN(false)
 
     // LOAD NOTES
-    const { loading, data } = useQuery(QUERY_NOTES);
+    const { loading, data, refetch } = useQuery(QUERY_NOTES);
     const notes = data?.notes || [];
     console.log("Notes:", notes);
-     
+ 
     const [addNote, { error }] = useMutation(ADD_NOTE);
     const [deleteNote, { error2 }] = useMutation(DELETE_NOTE);
 
@@ -54,6 +54,7 @@ const Notes = () => {
             variables: { ...formState },
           });
           cancel();
+          refetch();
           setSuccessAlert(true);
     
         } catch (err) {
@@ -75,6 +76,7 @@ const Notes = () => {
         const data = await deleteNote({
             variables: { noteid: note_id },
         });
+        refetch();
         setDeleteAlert(true);
     };
 
