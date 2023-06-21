@@ -24,6 +24,7 @@ const Notes = () => {
     const [editNote, setEditNote] = useState(false)
     const [addNoteBtn, setAddNoteBTN] = useState(false)
     const [successAlert, setSuccessAlert] = useState(false);
+    const [deleteAlert, setDeleteAlert] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState(-1);
 
     // OPEN and CLOSE add note or open note
@@ -74,6 +75,7 @@ const Notes = () => {
         const data = await deleteNote({
             variables: { noteid: note_id },
         });
+        setDeleteAlert(true);
     };
 
 
@@ -111,6 +113,15 @@ return (
                         <Alert.Heading>Success!</Alert.Heading>
                             <p>
                                 Your note has been added!
+                            </p>
+                        </Alert>
+                    :
+                        null
+                    } 
+                    { deleteAlert ? <Alert variant="danger" onClose={() => setDeleteAlert(false)} dismissible>
+                        <Alert.Heading>Note Deleted!</Alert.Heading>
+                            <p>
+                                Your note has been deleted!
                             </p>
                         </Alert>
                     :
