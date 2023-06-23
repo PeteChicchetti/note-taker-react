@@ -53,8 +53,8 @@ const Notes = () => {
           const { data } = addNote({
             variables: { ...formState },
           });
-          cancel();
           refetch();
+          cancel();
           setDeleteAlert(false);
           setSuccessAlert(true);
     
