@@ -253,6 +253,9 @@ body {
         display: none;
     }
 
+    .noteDate {
+        margin-top: 10px;
+    }
 }
 
 /*--- Edit Note ---*/
@@ -342,4 +345,22 @@ body {
     background-color: #15cdfc;
     color: black;
     border: 1px solid black;
+}
+
+@media screen and (max-width: 540px) {
+    .noteBtns {
+        margin: 0 10px 0 10px;
+    }
+    
+    .updateBtn{
+        margin-left: 0px;
+    }
+
+    .cancelBtn{
+        margin-left: 20px;
+    }
+
+    .noteInfo {
+        flex-direction: column;
+    }
 }
