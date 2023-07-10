@@ -27,6 +27,10 @@ const Notes = () => {
     const [deleteAlert, setDeleteAlert] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState(-1);
 
+    const [editTitle, setEditTitle] = useState(false);
+    const [editContent, setEditContent] = useState(false);
+    const [editButtons, setEditButtons] = useState(false);
+
     // OPEN and CLOSE add note or open note
     const add = () => setAddNoteBTN(true)
     const cancel = () => setAddNoteBTN(false)
@@ -139,16 +143,31 @@ return (
                 <>
                     <div className='noteCardHeader openHeader'>
                         <span className='titleContainer'>
-                            <CiStickyNote className='noteIcon'/>
-                            <h2 className='noteTitle'>{note.title}</h2>
+                            { editTitle === false ?
+                                <>
+                                <CiStickyNote className='noteIcon'/>
+                                <h2 className='noteTitle'>{note.title}</h2>
+                                </>
+                            :
+                                <form>
+                                    <input></input>
+                                </form>
+                            }
                         </span>
                     </div>
                     <div className='noteBorder'>
-                        <div className='noteContent'>{note.content}</div>
+                        { editContent === false ?
+                            <div className='noteContent'>{note.content}</div>
+                        :
+                            <form>
+                                <input></input>
+                            </form>
+                        }
                     </div>
                     <div className='noteInfo'>
                         <span className='noteBtnContainer'>
-                            <FaRegEdit className='noteBtns'/>
+
+                            <FaRegEdit className='noteBtns' onClick={() => { setEditTitle(true); setEditContent(true);  }}/>
                             <RiDeleteBin6Line className='noteBtns' onClick={() => { noteDeleteById(note._id); cancel() }} />
                         </span>
                         <span className="noteDate">Created on: <span className='date'>{note.createdAt}</span></span>
