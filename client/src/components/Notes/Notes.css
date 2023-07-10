@@ -47,7 +47,7 @@ body {
     align-items: center;
 }
 
-.title {
+.title, .editTitle {
     width: 50%;
     height: 25px;
     border: none;
@@ -58,7 +58,7 @@ body {
     padding: 0px 5px;
 }
 
-.content {
+.content, .editContent {
     height: 25px;
     border: none;
     border-radius: 5px;
@@ -255,6 +255,15 @@ body {
 
 }
 
+/*--- Edit Note ---*/
+/*--- Title and content inherit styling from new note card above ---*/
+.editTitle {
+    margin-bottom: 10px;
+}
+
+.editContent {
+    width: 100%;
+}
 
 /*--- Buttons ---*/
 .addBtn {

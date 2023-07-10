@@ -151,7 +151,7 @@ return (
                         </div>
                     :
                         <form>
-                            <input id='editTitle'></input>
+                            <input className='editTitle' id='editTitle' placeholder='Edit Title'></input>
                         </form>
                      }
                     </>
@@ -160,7 +160,7 @@ return (
                             <div className='noteContent'>{note.content}</div>
                         :
                             <form>
-                                <input id='editContent'></input>
+                                <textarea className='editContent' id='editContent' placeholder='Edit Content'></textarea>
                             </form>
                         }
                     {/* </div> */}
