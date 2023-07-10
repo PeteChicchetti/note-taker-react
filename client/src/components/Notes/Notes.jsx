@@ -141,21 +141,21 @@ return (
                 <Card className='noteCard' key={note._id}>
                 { selectedIndex === index ?
                 <>
-                    <div className='noteCardHeader openHeader'>
-                        <span className='titleContainer'>
-                            { editTitle === false ?
-                                <>
+                    <>
+                    { editTitle === false ?
+                        <div className='noteCardHeader openHeader'>
+                            <span className='titleContainer'>
                                 <CiStickyNote className='noteIcon'/>
                                 <h2 className='noteTitle'>{note.title}</h2>
-                                </>
-                            :
-                                <form>
-                                    <input id='editTitle'></input>
-                                </form>
-                            }
-                        </span>
-                    </div>
-                    <div className='noteBorder'>
+                            </span>
+                        </div>
+                    :
+                        <form>
+                            <input id='editTitle'></input>
+                        </form>
+                     }
+                    </>
+                    {/* <div className='noteBorder'> */}
                         { editContent === false ?
                             <div className='noteContent'>{note.content}</div>
                         :
@@ -163,7 +163,7 @@ return (
                                 <input id='editContent'></input>
                             </form>
                         }
-                    </div>
+                    {/* </div> */}
                     <div className='noteInfo'>
                         <span className='noteBtnContainer'>
                             { editButtons === false ?
