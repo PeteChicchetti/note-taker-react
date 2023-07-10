@@ -150,7 +150,7 @@ return (
                                 </>
                             :
                                 <form>
-                                    <input></input>
+                                    <input id='editTitle'></input>
                                 </form>
                             }
                         </span>
@@ -160,15 +160,23 @@ return (
                             <div className='noteContent'>{note.content}</div>
                         :
                             <form>
-                                <input></input>
+                                <input id='editContent'></input>
                             </form>
                         }
                     </div>
                     <div className='noteInfo'>
                         <span className='noteBtnContainer'>
-
-                            <FaRegEdit className='noteBtns' onClick={() => { setEditTitle(true); setEditContent(true);  }}/>
-                            <RiDeleteBin6Line className='noteBtns' onClick={() => { noteDeleteById(note._id); cancel() }} />
+                            { editButtons === false ?
+                                <>
+                                <FaRegEdit className='noteBtns' onClick={() => { setEditTitle(true); setEditContent(true); setEditButtons(true) }}/>
+                                <RiDeleteBin6Line className='noteBtns' onClick={() => { noteDeleteById(note._id); cancel() }}/>
+                                </>
+                            :
+                                <>
+                                <button type='submit' className='updateBtn' onClick={() => {setSuccessAlert(true)}}>UPDATE</button>
+                                <button className='cancelBtn' onClick={cancel}>CANCEL</button>
+                                </>
+                            }
                         </span>
                         <span className="noteDate">Created on: <span className='date'>{note.createdAt}</span></span>
                     </div>
