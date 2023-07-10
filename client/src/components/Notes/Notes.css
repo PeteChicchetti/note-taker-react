@@ -328,3 +328,18 @@ body {
     cursor: pointer;
     font-size: 17px;
 }
+
+.updateBtn {
+    background-color: #000;
+    color: #15cdfc;
+    border: 1px solid #15cdfc;
+    border-radius: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.updateBtn:hover {
+    background-color: #15cdfc;
+    color: black;
+    border: 1px solid black;
+}
