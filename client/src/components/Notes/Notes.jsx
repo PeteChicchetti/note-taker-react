@@ -21,9 +21,9 @@ import { ADD_NOTE } from '../../utils/mutations';
 import { DELETE_NOTE } from '../../utils/mutations';
 
 const Notes = () => {
-    const [showNote, setShowNote] = useState(false)
-    const [editNote, setEditNote] = useState(false)
-    const [addNoteBtn, setAddNoteBTN] = useState(false)
+    const [showNote, setShowNote] = useState(false);
+    const [editNote, setEditNote] = useState(false);
+    const [addNoteBtn, setAddNoteBTN] = useState(false);
     const [successAlert, setSuccessAlert] = useState(false);
     const [deleteAlert, setDeleteAlert] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState(-1);
@@ -33,8 +33,9 @@ const Notes = () => {
     const [editButtons, setEditButtons] = useState(false);
 
     // OPEN and CLOSE add note or open note
-    const add = () => setAddNoteBTN(true)
-    const cancel = () => setAddNoteBTN(false)
+    const add = () => setAddNoteBTN(true);
+    const cancel = () => setAddNoteBTN(false);
+    const cancelEdit = () => { setEditTitle(false); setEditContent(false); setEditButtons(false); }
 
     // LOAD NOTES
     const { loading, data, refetch } = useQuery(QUERY_NOTES);
@@ -179,7 +180,7 @@ return (
                             :
                                 <span>
                                     <button type='submit' className='updateBtn' onClick={() => {setSuccessAlert(true)}}>UPDATE</button>
-                                    <button className='cancelBtn' onClick={cancel}>CANCEL</button>
+                                    <button className='cancelBtn' onClick={cancelEdit}>CANCEL</button>
                                 </span>
                             }
                         {/* </span> */}
