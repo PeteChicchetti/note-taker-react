@@ -15,6 +15,7 @@ import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
+import { QUERY_USER } from '../../utils/queries';
 import { QUERY_NOTES } from '../../utils/queries';
 import { ADD_NOTE } from '../../utils/mutations';
 import { DELETE_NOTE } from '../../utils/mutations';
@@ -39,7 +40,11 @@ const Notes = () => {
     const { loading, data, refetch } = useQuery(QUERY_NOTES);
     const notes = data?.notes || [];
     console.log("Notes:", notes);
- 
+    console.log("All Data:", data);
+    
+    // const { loading, data, refetch } = useQuery(QUERY_USER);
+    // console.log(data);
+
     const [addNote, { error }] = useMutation(ADD_NOTE);
     const [deleteNote, { error2 }] = useMutation(DELETE_NOTE);
 
@@ -155,7 +160,7 @@ return (
                         </form>
                      }
                     </>
-                    {/* <div className='noteBorder'> */}
+                    <div className='noteBorder'>
                         { editContent === false ?
                             <div className='noteContent'>{note.content}</div>
                         :
@@ -163,21 +168,21 @@ return (
                                 <textarea className='editContent' id='editContent' placeholder='Edit Content'></textarea>
                             </form>
                         }
-                    {/* </div> */}
+                    </div>
                     <div className='noteInfo'>
-                        <span className='noteBtnContainer'>
+                        {/* <span className='noteBtnContainer'> */}
                             { editButtons === false ?
-                                <>
-                                <FaRegEdit className='noteBtns' onClick={() => { setEditTitle(true); setEditContent(true); setEditButtons(true) }}/>
-                                <RiDeleteBin6Line className='noteBtns' onClick={() => { noteDeleteById(note._id); cancel() }}/>
-                                </>
+                                <span>
+                                    <FaRegEdit className='noteBtns' onClick={() => { setEditTitle(true); setEditContent(true); setEditButtons(true) }}/>
+                                    <RiDeleteBin6Line className='noteBtns' onClick={() => { noteDeleteById(note._id); cancel() }}/>
+                                </span>
                             :
-                                <>
-                                <button type='submit' className='updateBtn' onClick={() => {setSuccessAlert(true)}}>UPDATE</button>
-                                <button className='cancelBtn' onClick={cancel}>CANCEL</button>
-                                </>
+                                <span>
+                                    <button type='submit' className='updateBtn' onClick={() => {setSuccessAlert(true)}}>UPDATE</button>
+                                    <button className='cancelBtn' onClick={cancel}>CANCEL</button>
+                                </span>
                             }
-                        </span>
+                        {/* </span> */}
                         <span className="noteDate">Created on: <span className='date'>{note.createdAt}</span></span>
                     </div>
                 </>

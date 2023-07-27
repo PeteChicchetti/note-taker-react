@@ -15,13 +15,9 @@ const resolvers = {
       throw new AuthenticationError('Not logged in');
     },
     /// GETS ALL NOTES ///
-    notes: async () => {
-      return await Note.find({}).sort({"createdAt": -1}).select('-__v ');
+    notes: async (parent, { userId }, context) => {
+        return await Note.find({}).sort({"createdAt": -1}).select('-__v ');
     },
-    /// GETS ONE NOTE ///
-    // note: async (parent, { noteid }) => {
-    //   return await Note.findOne({ _id: noteid }).populate({path: 'user'}).select('-__v');
-    // },
   },
 
   Mutation: {
