@@ -35,7 +35,11 @@ const Notes = () => {
     // OPEN and CLOSE add note or open note
     const add = () => setAddNoteBTN(true);
     const cancel = () => setAddNoteBTN(false);
-    const cancelEdit = () => { setEditTitle(false); setEditContent(false); setEditButtons(false); }
+    const cancelEdit = () => { 
+        setEditTitle(false); 
+        setEditContent(false); 
+        setEditButtons(false); 
+    }
 
     // LOAD NOTES
     const { loading, data, refetch } = useQuery(QUERY_NOTES);
